@@ -18,7 +18,7 @@ TextStyle kSettingsTileTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w400,
 );
 
-/// [routeURLs] is the used for mapping 
+/// [routeURLs] is the used for mapping
 Map<String, String> routeURLs = {
   // 'Notifications':  " No url for Notifications",
   // 'Feedback' : "No url for FeedbackUI() screen",
@@ -307,7 +307,6 @@ Alert onLogOutPressed(
 
 /// Use [onSettingTilePressed] method for opening the webView for respective tile
 /// Update return type accordingly.
-/// routeURL can be retrieved by your already created [getURL] method.
 void onSettingTilePressed(BuildContext context, String routeURL) {
   Navigator.of(context).push(
     MaterialPageRoute(
@@ -317,6 +316,7 @@ void onSettingTilePressed(BuildContext context, String routeURL) {
           ? Scaffold(
               body: Center(child: Text('Special route for Feedback')),
             )
+          // Replace this Scaffold with webview
           : Scaffold(
               body: Center(child: Text(routeURL)),
             ),
