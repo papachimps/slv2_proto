@@ -29,7 +29,6 @@ Widget searchMenuIcon = getMenuIcon(path: 'assets/images/search.svg');
 
 Widget profileMenuIcon = getMenuIcon(
     path: 'assets/images/profile.svg', color: lInactiveNavIconColor);
-
 Widget homeMenuIcon =
     getMenuIcon(path: 'assets/images/home.svg', color: lInactiveNavIconColor);
 Widget courseMenuIcon =

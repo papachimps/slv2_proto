@@ -18,7 +18,7 @@ class MyLatestCoursesSection extends StatelessWidget {
           itemBuilder: (ctx, index) {
             return MyLatestCoursesItem(
               cardWidth: 180 * gScaleFactor,
-              courseImageUrl: getImageUrl(index+6),
+              courseImageUrl: getImageUrl(index + 6),
               cardIndex: index,
               onPressed: () {
                 print('course card no. : $index pressed!');
@@ -72,8 +72,20 @@ class MyLatestCoursesItem extends StatelessWidget {
                 width: cardWidth,
                 // height: 135 * gScaleFactor,
                 imageUrl: courseImageUrl,
-                placeholder: (context, url) => Center(
-                    child: CircularProgressIndicator(color: gThemeOrangeColor)),
+                placeholder: (context, url) => Container(
+                    constraints: BoxConstraints.expand(),
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: ContinuousRectangleBorder(
+                          borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(lDefaultMargin * 1.5),
+                        topRight: Radius.circular(lDefaultMargin * 1.5),
+                      )),
+                    ),
+                    child: Center(
+                      child:
+                          CircularProgressIndicator(color: gThemeOrangeColor),
+                    )),
                 imageBuilder: (context, imageProvider) => DecoratedBox(
                   decoration: ShapeDecoration(
                     shape: ContinuousRectangleBorder(
