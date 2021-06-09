@@ -1,46 +1,39 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slv2/settings.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import 'global/constants.dart';
+
+import 'UI/Settings/settingsScreen.dart';
+import 'UI/Home/homeScreen.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Spicelearn V2_proto',
       debugShowCheckedModeBanner: false,
+      scrollBehavior: CupertinoScrollBehavior(),
       theme: ThemeData(
-        primaryColor: kOrangeAccentColor,
+        primaryColor: gThemeOrangeColor,
+        primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {
             TargetPlatform.android: CupertinoPageTransitionsBuilder(),
           },
         ),
       ),
-      home: Home(),
+      initialRoute: HomeScreen.route,
+      routes: {
+        SettingsScreen.route: (context) => SettingsScreen(),
+        HomeScreen.route: (context) => HomeScreen(),
+      },
     );
   }
 }
 
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: TextButton(
-            onPressed: () => Navigator.of(context).push(
-              MaterialPageRoute<void>(
-                builder: (BuildContext context) => Settings(),
-              ),
-            ),
-            child: Text('Go to Settings'),
-          ),
-        ),
-      ),
-    );
-  }
-}
+
