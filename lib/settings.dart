@@ -64,6 +64,7 @@ class Settings extends StatelessWidget {
                     showToggleSwitch: true,
                     switchToggleAction: () {
                       print('Extra Toggle Action Ran!');
+                      // add Notifcation toggle action here
                     },
                   ),
                   SettingsTile(
