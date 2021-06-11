@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 
 import '../localConstants.dart';
 
@@ -115,7 +115,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                   ),
                   color: Colors.white,
                   // color: primaryBlack.withOpacity(0.1),
-                  shadows: lBoxShadows,
+                  shadows: gBoxShadows,
                 ),
                 child: Container(
                   alignment: Alignment.topLeft,
@@ -130,22 +130,25 @@ class MyLatestCoursesItem extends StatelessWidget {
                     children: [
                       Text(
                         courseDate,
-                        style: lSubTitleTextStyle,
+                        style: gSubTitleTextStyle,
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: gDefaultMargin / 4),
                       Text(
                         courseTitle,
-                        style: lTitleTextStyle,
+                        style: gTitleTextStyle,
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: gDefaultMargin / 2),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
+                          gGetMenuIcon(path: gCategoryIcon, color: gInactiveNavIconColor),
+                          SizedBox(width: gDefaultMargin / 4),
                           Text(
                             courseCategory,
-                            style: lSubTitleTextStyle,
+                            style: gSubTitleTextStyle,
                             overflow: TextOverflow.ellipsis,
                           ),
                         ],

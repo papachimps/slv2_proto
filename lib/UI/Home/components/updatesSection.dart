@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 import '../localConstants.dart';
 
 // import '../imageCardButtonWithLabel.dart';
@@ -97,10 +97,10 @@ class _UpdatesListBuilderState extends State<UpdatesListBuilder> {
               effect: ScaleEffect(
                   dotHeight: 6,
                   dotWidth: 6,
-                  activeDotColor: activeDotColor,
+                  activeDotColor: lActiveDotColor,
                   scale: 9 / 6,
                   spacing: 6,
-                  dotColor: dotColor),
+                  dotColor: lDotColor),
             ),
           ),
         ],
@@ -141,7 +141,7 @@ class UpdatesItem extends StatelessWidget {
                 fit: BoxFit.fitWidth,
                 image: imageProvider,
               ),
-              shadows: lBoxShadows,
+              shadows: gBoxShadows,
             ),
           ),
         ),

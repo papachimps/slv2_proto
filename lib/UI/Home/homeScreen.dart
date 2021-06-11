@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 
-import 'package:slv2/global/constants.dart';
+import '../common/constants.dart';
 import './localConstants.dart';
 
-import 'components/bottomNavBar.dart';
-import 'components/home_appBar.dart';
+import '../common/blurAppBar.dart';
+import '../common/bottomNavBar.dart';
+
+import '/UI/Settings/settingsScreen.dart';
+
 import 'components/librarySection.dart';
 import 'components/myLatestCoursesSection.dart';
 import 'components/updatesSection.dart';
@@ -19,8 +22,32 @@ class HomeScreen extends StatelessWidget {
       extendBody: true,
       extendBodyBehindAppBar: true,
       backgroundColor: gPrimaryWhiteBG,
-      appBar: HomeAppBar(),
-      bottomNavigationBar: BottomNavBar(),
+      appBar: BlurAppBar(
+        padding: EdgeInsets.only(
+          left: gDefaultMargin,
+          top: gDefaultMargin*2.5,
+          right: gDefaultMargin,
+        ),
+        height: gAppBarHeight,
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            GestureDetector(
+              onTap: () =>
+                  Navigator.of(context).pushNamed(SettingsScreen.route),
+              child: gGetMenuIcon(path: gHamburgerAppBarIcon),
+            ),
+            Text('SpiceLearn', style: gAppBarTitleTextStyle),
+            GestureDetector(
+              onTap: () =>
+                  Navigator.of(context).pushNamed(SettingsScreen.route),
+              child: gGetMenuIcon(path: gSearchAppBarIcon),
+            ),
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavBar(activeRoute: HomeScreen.route),
       body: ListView(
         children: [
           //Updates Section
@@ -28,14 +55,14 @@ class HomeScreen extends StatelessWidget {
             padding: EdgeInsets.only(left: gDefaultTextMargin),
             child: Text(
               'Updates & Games',
-              style: lHeadingTextStyle,
+              style: gHeadingTextStyle,
             ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 2, left: gDefaultTextMargin),
             child: Text(
               'Latest events and edutainment',
-              style: lSubHeadingTextStyle,
+              style: gSubHeadingTextStyle,
             ),
           ),
           UpdatesListBuilder(),
@@ -47,7 +74,7 @@ class HomeScreen extends StatelessWidget {
                 EdgeInsets.only(top: gDefaultMargin, left: gDefaultTextMargin),
             child: Text(
               'My Latest Courses',
-              style: lHeadingTextStyle,
+              style: gHeadingTextStyle,
             ),
           ),
           Padding(
@@ -55,7 +82,7 @@ class HomeScreen extends StatelessWidget {
                 top: 2, left: gDefaultTextMargin, bottom: gDefaultMargin),
             child: Text(
               'Courses assigned to me',
-              style: lSubHeadingTextStyle,
+              style: gSubHeadingTextStyle,
             ),
           ),
           MyLatestCoursesSection(),
@@ -69,7 +96,7 @@ class HomeScreen extends StatelessWidget {
             ),
             child: Text(
               'Library',
-              style: lHeadingTextStyle,
+              style: gHeadingTextStyle,
             ),
           ),
           LibrarySection(),

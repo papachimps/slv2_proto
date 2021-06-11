@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'global/constants.dart';
+import 'UI/common/constants.dart';
 
 import 'UI/Settings/settingsScreen.dart';
 import 'UI/Home/homeScreen.dart';
+import 'UI/MyCourses/myCoursesScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,9 +32,8 @@ class MyApp extends StatelessWidget {
       routes: {
         SettingsScreen.route: (context) => SettingsScreen(),
         HomeScreen.route: (context) => HomeScreen(),
+        MyCoursesScreen.route: (context) => MyCoursesScreen(),
       },
     );
   }
 }
-
-

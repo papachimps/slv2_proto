@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 
 //bottom logout button
 class LogoutButton extends StatelessWidget {

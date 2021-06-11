@@ -1,11 +1,10 @@
 // settings page local variables, might be available in global constants already.
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 
 double lDefaultMargin = gBaseMultiplier * 3; //24
 
-const lDividerColor = Color(0xFFD9DCE3);
 const lDialogButtonTitleColor = Color(0xff88889D);
 const lAlertBoxBorderColor = Color(0xffECEDF1);
 

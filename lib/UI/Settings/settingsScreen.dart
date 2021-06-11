@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:slv2/UI/Settings/localConstants.dart';
+import '/UI/common/blurAppBar.dart';
 
-import 'package:slv2/global/constants.dart';
+import '../common/constants.dart';
+import 'localConstants.dart';
 
-import 'components/settings_appBar.dart';
 import 'components/settingsTitle.dart';
 import 'components/logOutButton.dart';
 import 'components/logOutAlertDialog.dart';
@@ -14,15 +14,42 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: gPrimaryWhiteBG,
-      appBar: SettingsAppBar(),
+      appBar: BlurAppBar(
+        padding: EdgeInsets.only(
+          left: gDefaultMargin,
+          top: gDefaultMargin * 2.5,
+          right: gDefaultMargin,
+        ),
+        height: 104 * gScaleFactor,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () => Navigator.of(context).maybePop(),
+              child: Icon(
+                Icons.arrow_back_ios,
+                color: gHeadingTextColor,
+                // size: lDefaultMargin,
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                  left: lDefaultMargin / 6, top: lDefaultMargin),
+              child: Text('Settings', style: gScreenHeaderStyle),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Padding(
-            padding: EdgeInsets.only(bottom: lDefaultMargin, left: lDefaultMargin),
-            child: Text('Settings', style: gMyCoursesHeaderStyle),
-          ),
+          // Padding(
+          //   padding:
+          //       EdgeInsets.only(bottom: lDefaultMargin, left: lDefaultMargin),
+          //   child: Text('Settings', style: gScreenHeaderStyle),
+          // ),
           Container(
             padding: EdgeInsets.symmetric(horizontal: lDefaultMargin),
             color: Colors.white,

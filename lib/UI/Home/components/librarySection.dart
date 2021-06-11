@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 import '../localConstants.dart';
 // import 'package:random_color/random_color.dart';
 
@@ -78,7 +78,7 @@ class LibraryItem extends StatelessWidget {
               shape: ContinuousRectangleBorder(
                 borderRadius: BorderRadius.circular(lDefaultMargin * 1.5),
               ),
-              shadows: lBoxShadows,
+              shadows: gBoxShadows,
               image: DecorationImage(
                 fit: BoxFit.fitHeight,
                 image: imageProvider,

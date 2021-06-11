@@ -1,7 +1,7 @@
 //settings options tile component
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 
 import '../localConstants.dart';
 
@@ -14,10 +14,12 @@ void onSettingTilePressed(BuildContext context, String routeURL) {
       builder: (BuildContext context) => routeURL == 'Default'
           //Replace this Scaffold with Feedback Page
           ? Scaffold(
+              appBar: AppBar(),
               body: Center(child: Text('Special route for Feedback')),
             )
           // Replace this Scaffold with webview
           : Scaffold(
+              appBar: AppBar(),
               body: Center(child: Text(routeURL)),
             ),
     ),
@@ -59,7 +61,7 @@ class _SettingsTileState extends State<SettingsTile> {
           border: Border(
             bottom: BorderSide(
               width: 0.5 * gScaleFactor,
-              color: lDividerColor,
+              color: gDividerColor,
             ),
           ),
         ),
@@ -87,7 +89,7 @@ class _SettingsTileState extends State<SettingsTile> {
                   )
                 : Icon(
                     Icons.arrow_forward_ios,
-                    color: lDividerColor,
+                    color: gDividerColor,
                     size: 18 * gScaleFactor,
                   ),
           ],

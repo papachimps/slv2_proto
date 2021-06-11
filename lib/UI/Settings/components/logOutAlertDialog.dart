@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'package:slv2/global/constants.dart';
+import 'package:slv2/UI/common/constants.dart';
 import '../localConstants.dart';
 
 var alertStyle = AlertStyle(
