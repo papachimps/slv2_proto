@@ -6,6 +6,7 @@ import 'constants.dart';
 
 import '/UI/Home/homeScreen.dart';
 import '/UI/MyCourses/myCoursesScreen.dart';
+import '/UI/Bookmarks/bookmarksScreen.dart';
 
 class BottomNavBar extends StatelessWidget {
   final String activeRoute;
@@ -20,13 +21,13 @@ class BottomNavBar extends StatelessWidget {
       child: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(
-            sigmaX: 6,
-            sigmaY: 6,
+            sigmaX: gBlurSigma,
+            sigmaY: gBlurSigma,
           ),
           child: Container(
             height: gAppBarHeight,
             decoration: BoxDecoration(
-              color: gAppBarColor.withOpacity(0.92),
+              color: gAppBarColor.withOpacity(gBarOpacity),
               border:
                   Border(top: BorderSide(color: Color(0xffF1E5E5), width: 1)),
             ),
@@ -50,7 +51,7 @@ class BottomNavBar extends StatelessWidget {
                 navBarItem(
                   context: context,
                   iconPath: gBookmarkNavBarIcon,
-                  screenRouteName: HomeScreen.route,
+                  screenRouteName: BookmarksScreen.route,
                   activeRoute: activeRoute,
                 ),
                 navBarItem(

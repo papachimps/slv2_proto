@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../common/constants.dart';
+import '/UI/common/constants.dart';
+import '/UI/common/bottomNavBar.dart';
+
 import './localConstants.dart';
 
-import '../common/blurAppBar.dart';
-import '../common/bottomNavBar.dart';
-
-import '/UI/Settings/settingsScreen.dart';
-
+import 'components/homeAppBar.dart';
 import 'components/librarySection.dart';
 import 'components/myLatestCoursesSection.dart';
 import 'components/updatesSection.dart';
@@ -22,31 +20,7 @@ class HomeScreen extends StatelessWidget {
       extendBody: true,
       extendBodyBehindAppBar: true,
       backgroundColor: gPrimaryWhiteBG,
-      appBar: BlurAppBar(
-        padding: EdgeInsets.only(
-          left: gDefaultMargin,
-          top: gDefaultMargin*2.5,
-          right: gDefaultMargin,
-        ),
-        height: gAppBarHeight,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushNamed(SettingsScreen.route),
-              child: gGetMenuIcon(path: gHamburgerAppBarIcon),
-            ),
-            Text('SpiceLearn', style: gAppBarTitleTextStyle),
-            GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushNamed(SettingsScreen.route),
-              child: gGetMenuIcon(path: gSearchAppBarIcon),
-            ),
-          ],
-        ),
-      ),
+      appBar: homeAppBar(context),
       bottomNavigationBar: BottomNavBar(activeRoute: HomeScreen.route),
       body: ListView(
         children: [
@@ -59,7 +33,8 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(top: 2, left: gDefaultTextMargin),
+            padding: EdgeInsets.only(
+                left: gDefaultTextMargin, bottom: gDefaultMargin / 2),
             child: Text(
               'Latest events and edutainment',
               style: gSubHeadingTextStyle,
@@ -67,11 +42,11 @@ class HomeScreen extends StatelessWidget {
           ),
           UpdatesListBuilder(),
           //
-          // SizedBox(height: 36, child: Container(color: spiceRed,),),
+
           //My Latest Courses
           Padding(
-            padding:
-                EdgeInsets.only(top: gDefaultMargin, left: gDefaultTextMargin),
+            padding: EdgeInsets.only(
+                top: gDefaultMargin / 2, left: gDefaultTextMargin),
             child: Text(
               'My Latest Courses',
               style: gHeadingTextStyle,
@@ -79,7 +54,7 @@ class HomeScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.only(
-                top: 2, left: gDefaultTextMargin, bottom: gDefaultMargin),
+                left: gDefaultTextMargin, bottom: gDefaultMargin),
             child: Text(
               'Courses assigned to me',
               style: gSubHeadingTextStyle,
@@ -87,6 +62,7 @@ class HomeScreen extends StatelessWidget {
           ),
           MyLatestCoursesSection(),
           //
+
           //Library Section
           Padding(
             padding: EdgeInsets.only(
@@ -100,10 +76,9 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           LibrarySection(),
-          SizedBox(
-            height: 24,
-          ),
           //
+
+          SizedBox(height: lDefaultMargin),
         ],
       ),
     );

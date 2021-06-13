@@ -12,19 +12,21 @@ class LogoutButton extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: onPressed,
-      height: gBaseMultiplier * 8,
-      color: Colors.white,
-      splashColor: gThemeOrangeColor.withOpacity(0.1),
-      minWidth: double.infinity,
-      child: Center(
-        child: Text(
-          'Log Out',
-          style: GoogleFonts.poppins(
-            color: gThemeOrangeColor,
-            fontSize: 13 * gScaleFactor,
-            fontWeight: FontWeight.w400,
+    return ClipRect(
+      child: MaterialButton(
+        onPressed: onPressed,
+        height: gAppBarHeight,
+        color: Colors.white,
+        splashColor: gThemeOrangeColor.withOpacity(0.1),
+        minWidth: double.infinity,
+        child: Center(
+          child: Text(
+            'Log Out',
+            style: GoogleFonts.poppins(
+              color: gThemeOrangeColor,
+              fontSize: 13 * gScaleFactor,
+              fontWeight: FontWeight.w400,
+            ),
           ),
         ),
       ),

@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:slv2/UI/common/constants.dart';
 
 double lDefaultMargin = gBaseMultiplier * 3; //24
+double lAppBarHeight = 104 * gScaleFactor;
 
 const lDialogButtonTitleColor = Color(0xff88889D);
 const lAlertBoxBorderColor = Color(0xffECEDF1);

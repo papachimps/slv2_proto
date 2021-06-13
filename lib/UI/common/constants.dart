@@ -8,15 +8,20 @@ import 'package:random_color/random_color.dart';
 const gPrimaryWhiteBG = Color(0xffF2F4FB);
 const gPrimaryBlack = Color(0xff212523);
 const gSpiceRed = Color(0xffED1B23);
-const gThemeOrangeColor = Color(0xFFFF7648);
+const gThemeOrangeColor = Color(0xffFF7648);
+const gThemeOrangeColor2 = Color(0xffFC573B);
 
 const gHeadingTextColor = Color(0xff212523);
 const gSubHeadingTextColor = Color(0xff88889D);
 const gTitleTextColor = Color(0xff5A6175);
 const gSubTitleTextColor = Color(0xff88889D);
+const gCourseCardTitleTextColor = Color(0xff4C4B68);
 
 const gAppBarColor = Color(0xffF2F4F8);
 const gDividerColor = Color(0xFFD9DCE3);
+
+const double gBlurSigma = 10;
+const double gBarOpacity = 0.80;
 
 const Color gInactiveNavIconColor = const Color(0xff9E9EAF);
 
@@ -45,7 +50,7 @@ TextStyle gAppBarTitleTextStyle = GoogleFonts.poppins(
   color: gSpiceRed,
   fontWeight: FontWeight.w500,
   letterSpacing: -0.2 * gScaleFactor,
-  height: (1.5) * gScaleFactor,
+  height: (0.90) * gScaleFactor,
 );
 
 TextStyle gHeadingTextStyle = GoogleFonts.poppins(
@@ -81,11 +86,27 @@ TextStyle gSubTitleTextStyle = GoogleFonts.poppins(
   height: (11.88 / 12) * gScaleFactor,
 );
 
+TextStyle gCourseCardTitleTextStyle = GoogleFonts.poppins(
+  fontSize: 14 * gScaleFactor,
+  color: gCourseCardTitleTextColor,
+  // backgroundColor: spiceRed,
+  fontWeight: FontWeight.w400,
+  height: 1.32 * gScaleFactor,
+);
+
+TextStyle gCourseCountTextStyle = GoogleFonts.poppins(
+  fontSize: 16 * gScaleFactor,
+  color: Color(0xff4C4B68),
+  // backgroundColor: spiceRed,
+  fontWeight: FontWeight.w400,
+  height: 1.32 * gScaleFactor,
+);
+
 List<BoxShadow> gBoxShadows = [
   BoxShadow(
     color: Color(0xff111111).withOpacity(0.08),
     blurRadius: 6,
-    spreadRadius: 0.1,
+    spreadRadius: 0.2,
     offset: Offset(3, 2),
   ),
 ];
@@ -93,12 +114,13 @@ List<BoxShadow> gBoxShadows = [
 Widget gGetMenuIcon({
   required String path,
   Color? color = gPrimaryBlack,
+  double? size,
 }) =>
     SvgPicture.asset(
       path,
       color: color,
-      // height: lDefaultMargin,
-      // width: lDefaultMargin,
+      height: size,
+      width: size,
     );
 
 //app bar
@@ -113,7 +135,6 @@ const gHomeNavBarIcon = 'assets/images/home.svg';
 const gCourseNavBarIcon = 'assets/images/course.svg';
 const gBookmarkNavBarIcon = 'assets/images/bookmark.svg';
 const gProfileNavBarIcon = 'assets/images/profile.svg';
-
 
 final randomColor = RandomColor();
 // List<int> randIds = [Random().nextInt(100) * 124];

@@ -22,13 +22,13 @@ class BlurAppBar extends StatelessWidget implements PreferredSize {
     return ClipRect(
       child: BackdropFilter(
         filter: ImageFilter.blur(
-          sigmaX: 6,
-          sigmaY: 6,
+          sigmaX: gBlurSigma,
+          sigmaY: gBlurSigma,
         ),
         child: Container(
           alignment: Alignment.topLeft,
           constraints: BoxConstraints.expand(),
-          color: gAppBarColor.withOpacity(0.92),
+          color: gAppBarColor.withOpacity(gBarOpacity),
           padding: padding,
           child: child,
         ),

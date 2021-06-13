@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slv2/UI/Home/homeScreen.dart';
 
 // ignore: todo
 ///TODO: find way to used routeName for pushing page to [PageRouteBuilder]
@@ -24,9 +25,14 @@ Route _createRoute(Widget route) {
 extension NavigatorStateExtension on NavigatorState {
   void pushNamedIfNotCurrent(String routeName, {Object? arguments}) {
     if (!isCurrent(routeName)) {
-      pushNamed(routeName, arguments: arguments);
+      pushNamedAndRemoveUntil(
+        routeName,
+        ModalRoute.withName(HomeScreen.route),
+        arguments: arguments,
+      );
     }
   }
+
   bool isCurrent(String routeName) {
     bool isCurrent = false;
     popUntil((route) {
