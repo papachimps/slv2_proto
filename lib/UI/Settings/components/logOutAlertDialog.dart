@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import 'package:slv2/UI/common/constants.dart';
+import '/UI/common/constants.dart';
 import '../localConstants.dart';
 
 var alertStyle = AlertStyle(
@@ -26,7 +25,7 @@ var alertStyle = AlertStyle(
 DialogButton templateDialogButton({
   required String title,
   Color color = Colors.white,
-  Color titleColor = Colors.white,
+  Color? titleColor,
   VoidCallback? onPressed,
 }) =>
     DialogButton(
@@ -36,10 +35,7 @@ DialogButton templateDialogButton({
       color: color,
       child: Text(
         title,
-        style: GoogleFonts.poppins(
-          color: titleColor,
-          fontSize: 16 * gScaleFactor,
-        ),
+        style: lAlertDialogTitleTextStyle.copyWith(color: titleColor),
       ),
       onPressed: onPressed,
     );

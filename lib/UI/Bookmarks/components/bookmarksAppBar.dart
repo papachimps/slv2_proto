@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:slv2/UI/Settings/settingsScreen.dart';
 
+import '/UI/common/constants.dart';
 import '/UI/common/blurAppBar.dart';
 import '/UI/common/searchAndFilterBlock.dart';
 import '/UI/common/filtersBottomSheet.dart';
 
-import '/UI/common/constants.dart';
+import '/UI/Settings/settingsScreen.dart';
+
 import '../localConstants.dart';
 
 BlurAppBar bookmarksAppBar(BuildContext context) {

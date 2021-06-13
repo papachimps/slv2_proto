@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'package:slv2/UI/common/constants.dart';
+import '/UI/common/constants.dart';
+import '../localConstants.dart';
 
 //bottom logout button
 class LogoutButton extends StatelessWidget {
@@ -22,11 +22,7 @@ class LogoutButton extends StatelessWidget {
         child: Center(
           child: Text(
             'Log Out',
-            style: GoogleFonts.poppins(
-              color: gThemeOrangeColor,
-              fontSize: 13 * gScaleFactor,
-              fontWeight: FontWeight.w400,
-            ),
+            style: lButtonTitleTextStyle,
           ),
         ),
       ),

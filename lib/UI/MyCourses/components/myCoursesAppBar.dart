@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/blurAppBar.dart';
-
 import '/UI/common/constants.dart';
-import '../localConstants.dart';
+import '/UI/common/blurAppBar.dart';
 
 import '/UI/Settings/settingsScreen.dart';
 import '/UI/Search/searchScreen.dart';
+
+import '../localConstants.dart';
 
 BlurAppBar myCoursesAppBar(BuildContext context) {
   return BlurAppBar(
@@ -30,8 +30,7 @@ BlurAppBar myCoursesAppBar(BuildContext context) {
               child: gGetMenuIcon(path: gHamburgerAppBarIcon),
             ),
             GestureDetector(
-              onTap: () =>
-                  Navigator.of(context).pushNamed(SearchScreen.route),
+              onTap: () => Navigator.of(context).pushNamed(SearchScreen.route),
               child: gGetMenuIcon(path: gSearchAppBarIcon),
             ),
           ],

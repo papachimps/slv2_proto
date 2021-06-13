@@ -1,7 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import 'constants.dart';
 
 class FiltersBottomSheet extends StatelessWidget {
   final String activeCompletionStatus = 'All';

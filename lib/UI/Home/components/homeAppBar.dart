@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/blurAppBar.dart';
 import '/UI/common/constants.dart';
+import '/UI/common/blurAppBar.dart';
 
 import '/UI/Settings/settingsScreen.dart';
 import '/UI/Search/searchScreen.dart';

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:slv2/UI/common/constants.dart';
+
+import 'constants.dart';
 
 class SearchAndFilterBlock extends StatelessWidget {
   final VoidCallback? onFilterPressed;

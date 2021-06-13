@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import 'package:slv2/UI/common/constants.dart';
+import '/UI/common/constants.dart';
 import '../localConstants.dart';
 // import 'package:random_color/random_color.dart';
 

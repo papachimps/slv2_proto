@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import '/UI/common/constants.dart';
 import '/UI/common/bottomNavBar.dart';
 
-import './localConstants.dart';
-
+import 'localConstants.dart';
 import 'components/homeAppBar.dart';
 import 'components/librarySection.dart';
 import 'components/myLatestCoursesSection.dart';

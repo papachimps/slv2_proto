@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '/UI/common/constants.dart';
 import '/UI/common/bottomNavBar.dart';
 import '/UI/common/courseGridView.dart';
 
-import '/UI/common/constants.dart';
 import 'localConstants.dart';
-
 import 'components/categoryAppBar.dart';
+
 
 class CategoryScreen extends StatelessWidget {
   static const String route = 'category';

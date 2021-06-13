@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
+import '/UI/common/constants.dart';
 import '/UI/common/blurAppBar.dart';
 import '/UI/Settings/settingsScreen.dart';
 import '/UI/common/searchAndFilterBlock.dart';
 import '/UI/common/filtersBottomSheet.dart';
 
-import '/UI/common/constants.dart';
 import '../localConstants.dart';
 
-BlurAppBar categoryAppBar(BuildContext context, String title) {
+BlurAppBar categoryAppBar(BuildContext context, String categoryTitle) {
   return BlurAppBar(
     padding: EdgeInsets.only(
       top: gDefaultMargin * 3,
@@ -37,11 +37,11 @@ BlurAppBar categoryAppBar(BuildContext context, String title) {
             indicatorPadding: EdgeInsets.only(right: gDefaultMargin),
             indicatorWeight: gDefaultMargin / 4,
             labelColor: gPrimaryBlack,
-            labelStyle: lHeaderTextStyle,
+            labelStyle: lTabLabelTextStyle,
             labelPadding: EdgeInsets.only(right: gDefaultMargin),
-            unselectedLabelColor: lFilterButtonColor,
+            unselectedLabelColor: gFilterButtonGreyColor,
             tabs: [
-              Tab(text: title),
+              Tab(text: categoryTitle),
               Tab(text: 'Leaderboard'),
             ],
           ),
