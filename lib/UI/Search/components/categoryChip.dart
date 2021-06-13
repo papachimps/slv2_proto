@@ -23,7 +23,7 @@ class CategoryChip extends StatelessWidget {
       padding: EdgeInsets.only(right: gDefaultMargin / 2),
       child: MaterialButton(
         highlightElevation: 2,
-        splashColor: lChipOrangeColor.withOpacity(0.1),
+        splashColor: gChipOrangeColor.withOpacity(0.1),
         clipBehavior: Clip.antiAlias,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(lDefaultMargin * 2)),
@@ -44,7 +44,7 @@ class CategoryChip extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
         ),
-        color: isActive ? lChipOrangeColor : lChipGreyColor,
+        color: isActive ? gChipOrangeColor : gChipGreyColor,
       ),
     );
   }

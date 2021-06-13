@@ -36,6 +36,7 @@ double gAppBarHeight = 64 * gScaleFactor;
 double gBaseMultiplier = 8 * gScaleFactor;
 
 double gDefaultMargin = gBaseMultiplier * 2; //16
+double gDefaultMargin2 = gBaseMultiplier * 3; //24
 double gDefaultTextMargin = gBaseMultiplier * 2.5; //20
 
 TextStyle gScreenHeaderStyle = GoogleFonts.poppins(
@@ -97,6 +98,33 @@ TextStyle gCourseCardTitleTextStyle = GoogleFonts.poppins(
 TextStyle gCourseCountTextStyle = GoogleFonts.poppins(
   fontSize: 16 * gScaleFactor,
   color: Color(0xff4C4B68),
+  // backgroundColor: spiceRed,
+  fontWeight: FontWeight.w400,
+  height: 1.32 * gScaleFactor,
+);
+
+const gFilterItemTextColor = Color(0xff7D7D93);
+const gChipOrangeColor = gThemeOrangeColor2;
+const gChipGreyColor = Color(0xffE3E7F2);
+const gFilterButtonGreyColor = Color(0xffBCC1CD);
+
+TextStyle gFilterTitleTextStyle = GoogleFonts.poppins(
+  fontSize: 12 * gScaleFactor,
+  color: gCourseCardTitleTextColor,
+  fontWeight: FontWeight.w600,
+  height: 1.32 * gScaleFactor,
+);
+
+TextStyle gFilterItemTextStyle = GoogleFonts.poppins(
+  fontSize: 17 * gScaleFactor,
+  color: gFilterItemTextColor,
+  fontWeight: FontWeight.w400,
+  height: 1.32 * gScaleFactor,
+);
+
+TextStyle gSearchFieldTextStyle = GoogleFonts.poppins(
+  fontSize: 14 * gScaleFactor,
+  color: gSubTitleTextColor,
   // backgroundColor: spiceRed,
   fontWeight: FontWeight.w400,
   height: 1.32 * gScaleFactor,

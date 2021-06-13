@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:slv2/UI/common/constants.dart';
 
-import '../Search/localConstants.dart';
-
 class SearchAndFilterBlock extends StatelessWidget {
   final VoidCallback? onFilterPressed;
   const SearchAndFilterBlock({
@@ -20,25 +18,25 @@ class SearchAndFilterBlock extends StatelessWidget {
           child: TextField(
             cursorColor: gThemeOrangeColor,
             textAlignVertical: TextAlignVertical.center,
-            style: lInputFieldTextStyle.copyWith(fontWeight: FontWeight.w500),
+            style: gSearchFieldTextStyle.copyWith(fontWeight: FontWeight.w500),
             cursorWidth: 1,
             decoration: InputDecoration(
               filled: true,
               fillColor: Colors.white,
               prefixIcon: Padding(
-                padding: EdgeInsets.symmetric(vertical: lDefaultMargin / 2),
+                padding: EdgeInsets.symmetric(vertical: gDefaultMargin2 / 2),
                 child: gGetMenuIcon(
                   path: gSearchAppBarIcon,
                   color: gSubTitleTextColor,
-                  size: lDefaultMargin,
+                  size: gDefaultMargin2,
                 ),
               ),
-              contentPadding: EdgeInsets.only(right: lDefaultMargin / 2),
+              contentPadding: EdgeInsets.only(right: gDefaultMargin2 / 2),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(gDefaultMargin / 4),
                 borderSide: BorderSide.none,
               ),
-              hintStyle: lInputFieldTextStyle,
+              hintStyle: gSearchFieldTextStyle,
               hintText: 'Search Courses',
               hintMaxLines: 1,
             ),
@@ -49,19 +47,19 @@ class SearchAndFilterBlock extends StatelessWidget {
           flex: 50,
           child: MaterialButton(
             onPressed: onFilterPressed,
-            splashColor: lChipOrangeColor.withOpacity(0.1),
-            color: lFilterButtonColor,
+            splashColor: gChipOrangeColor.withOpacity(0.1),
+            color: gFilterButtonGreyColor,
             elevation: 0,
             highlightElevation: 2,
-            highlightColor: lChipOrangeColor,
+            highlightColor: gChipOrangeColor,
             shape: ContinuousRectangleBorder(
-              borderRadius: BorderRadius.circular(lDefaultMargin),
+              borderRadius: BorderRadius.circular(gDefaultMargin2),
             ),
             child: Center(
               child: Icon(
                 Icons.tune_rounded,
                 color: Colors.white,
-                size: lDefaultMargin,
+                size: gDefaultMargin2,
               ),
             ),
           ),

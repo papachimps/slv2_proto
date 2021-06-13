@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import '/UI/common/constants.dart';
-import '../Bookmarks/localConstants.dart';
 
 class FiltersBottomSheet extends StatelessWidget {
   final String activeCompletionStatus = 'All';
@@ -24,19 +23,19 @@ class FiltersBottomSheet extends StatelessWidget {
             color: gAppBarColor.withOpacity(gBarOpacity),
             shape: ContinuousRectangleBorder(
               borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(lDefaultMargin * 4),
-                topRight: Radius.circular(lDefaultMargin * 4),
+                topLeft: Radius.circular(gDefaultMargin2 * 4),
+                topRight: Radius.circular(gDefaultMargin2 * 4),
               ),
             ),
           ),
-          padding: EdgeInsets.all(lDefaultMargin),
+          padding: EdgeInsets.all(gDefaultMargin2),
           child: ListView(
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: lDefaultMargin),
+              SizedBox(height: gDefaultMargin),
               Text(
                 'Status',
-                style: lChipTextStyle.copyWith(fontWeight: FontWeight.w600),
+                style: gFilterTitleTextStyle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -60,10 +59,10 @@ class FiltersBottomSheet extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: lDefaultMargin),
+              SizedBox(height: gDefaultMargin2),
               Text(
                 'Filters',
-                style: lChipTextStyle.copyWith(fontWeight: FontWeight.w600),
+                style: gFilterTitleTextStyle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -83,10 +82,10 @@ class FiltersBottomSheet extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: lDefaultMargin),
+              SizedBox(height: gDefaultMargin2),
               Text(
                 'Sort as',
-                style: lChipTextStyle.copyWith(fontWeight: FontWeight.w600),
+                style: gFilterTitleTextStyle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -134,8 +133,8 @@ class FilterItem extends StatelessWidget {
         child: Text(
           title,
           style: title == activeField
-              ? lFilterTextStyle.copyWith(color: lChipOrangeColor)
-              : lFilterTextStyle,
+              ? gFilterItemTextStyle.copyWith(color: gThemeOrangeColor2)
+              : gFilterItemTextStyle,
         ),
       ),
     );
