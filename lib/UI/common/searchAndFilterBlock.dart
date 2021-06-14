@@ -47,6 +47,7 @@ class SearchAndFilterBlock extends StatelessWidget {
         Expanded(
           flex: 50,
           child: MaterialButton(
+            height: gDefaultMargin2 * 2,
             onPressed: onFilterPressed,
             splashColor: gChipOrangeColor.withOpacity(0.1),
             color: gFilterButtonGreyColor,

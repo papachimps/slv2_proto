@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,6 +9,7 @@ import 'package:random_color/random_color.dart';
 const gPrimaryWhiteBG = Color(0xffF2F4FB);
 const gPrimaryBlack = Color(0xff212523);
 const gSpiceRed = Color(0xffED1B23);
+const gSpiceRed2 = Color(0xffF54141);
 const gThemeOrangeColor = Color(0xffFF7648);
 const gThemeOrangeColor2 = Color(0xffFC573B);
 
@@ -165,6 +167,7 @@ const gBookmarkNavBarIcon = 'assets/images/bookmark.svg';
 const gProfileNavBarIcon = 'assets/images/profile.svg';
 
 final randomColor = RandomColor();
+final faker = new Faker();
 // List<int> randIds = [Random().nextInt(100) * 124];
 String getImageUrl(int index) => 'https://picsum.photos/600/400?random=$index';
 

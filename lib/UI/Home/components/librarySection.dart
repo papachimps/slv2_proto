@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:slv2/UI/Category/categoryScreen.dart';
+import '/UI/common/routeTransition.dart';
 
 import '/UI/common/constants.dart';
 import '../localConstants.dart';
@@ -25,8 +27,7 @@ class LibrarySection extends StatelessWidget {
               cardIndex: index,
               onPressed: () {
                 print('library card no. : $index pressed!');
-                // ignore: todo
-                //TODO: on pressing update tile
+                Navigator.of(context).pushNamedIfNotCurrent(CategoryScreen.route);
               },
             );
           }),

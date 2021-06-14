@@ -3,7 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '/UI/common/constants.dart';
 
-double lAppBarHeight = 180 * gScaleFactor;
+double lAppBarHeight = 136 * gScaleFactor;
 double lDefaultMargin = gDefaultMargin2; //24
 
 TextStyle lTabLabelTextStyle = GoogleFonts.poppins(
