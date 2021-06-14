@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      initialRoute: CategoryScreen.route,
+      initialRoute: HomeScreen.route,
       routes: {
         SettingsScreen.route: (context) => SettingsScreen(),
         SearchScreen.route: (context) => SearchScreen(),

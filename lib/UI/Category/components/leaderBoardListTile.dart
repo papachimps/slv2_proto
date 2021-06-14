@@ -71,37 +71,40 @@ class LeaderBoardListTile extends StatelessWidget {
               ),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.only(left: gDefaultMargin),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  userName,
-                  overflow: TextOverflow.fade,
-                  style: gFilterTitleTextStyle.copyWith(
-                    fontSize: 13 * gScaleFactor,
-                    color: isCurrentUser
-                        ? Colors.white
-                        : gCourseCardTitleTextColor,
+          Expanded(
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: gDefaultMargin),
+              // color: Colors.green,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    userName,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: gFilterTitleTextStyle.copyWith(
+                      fontSize: 13 * gScaleFactor,
+                      color: isCurrentUser
+                          ? Colors.white
+                          : gCourseCardTitleTextColor,
+                    ),
                   ),
-                ),
-                SizedBox(height: gDefaultMargin / 8),
-                Text(
-                  userBase.toUpperCase(),
-                  style: gSubTitleTextStyle.copyWith(
-                    fontSize: 11 * gScaleFactor,
-                    letterSpacing: 1.05,
-                    color: isCurrentUser
-                        ? Colors.white
-                        : gCourseCardTitleTextColor,
+                  SizedBox(height: gDefaultMargin / 8),
+                  Text(
+                    userBase.toUpperCase(),
+                    style: gSubTitleTextStyle.copyWith(
+                      fontSize: 11 * gScaleFactor,
+                      letterSpacing: 1.05,
+                      color: isCurrentUser
+                          ? Colors.white
+                          : gCourseCardTitleTextColor,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
-          Spacer(),
           Text(
             userScore.toString(),
             textAlign: TextAlign.right,

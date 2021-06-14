@@ -10,7 +10,7 @@ class FiltersBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ClipRect(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.antiAlias,
       child: BackdropFilter(
         filter: ImageFilter.blur(
           sigmaX: gBlurSigma * 1.5,
@@ -30,6 +30,7 @@ class FiltersBottomSheet extends StatelessWidget {
           ),
           padding: EdgeInsets.all(gDefaultMargin2),
           child: ListView(
+            physics: NeverScrollableScrollPhysics(),
             // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: gDefaultMargin),
@@ -39,7 +40,7 @@ class FiltersBottomSheet extends StatelessWidget {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  vertical: gDefaultMargin / 2,
+                  vertical: gDefaultMargin2 / 4,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -59,14 +60,14 @@ class FiltersBottomSheet extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: gDefaultMargin2),
+              SizedBox(height: gDefaultMargin),
               Text(
                 'Filters',
                 style: gFilterTitleTextStyle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  vertical: gDefaultMargin / 2,
+                  vertical: gDefaultMargin2 / 4,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,14 +83,14 @@ class FiltersBottomSheet extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: gDefaultMargin2),
+              SizedBox(height: gDefaultMargin),
               Text(
                 'Sort as',
                 style: gFilterTitleTextStyle,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  vertical: gDefaultMargin / 2,
+                  vertical: gDefaultMargin2 / 4,
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

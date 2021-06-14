@@ -24,7 +24,9 @@ class CategoryCoursesListing extends StatelessWidget {
           floating: true,
           backgroundColor: gPrimaryWhiteBG,
           elevation: 0,
+          // leadingWidth: 0,
           titleSpacing: 0,
+          automaticallyImplyLeading: false,
           title: Container(
             padding: EdgeInsets.symmetric(
               horizontal: gDefaultMargin,
