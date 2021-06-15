@@ -1,7 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 import '/UI/common/constants.dart';
+import '/UI/Course/courseScreen.dart';
+
 import '../localConstants.dart';
 
 class MyLatestCoursesSection extends StatelessWidget {
@@ -24,6 +26,7 @@ class MyLatestCoursesSection extends StatelessWidget {
                 print('course card no. : $index pressed!');
                 // ignore: todo
                 //TODO: on pressing update tile
+                Navigator.of(context).pushNamed(CourseScreen.route);
               },
             );
           }),
@@ -144,7 +147,9 @@ class MyLatestCoursesItem extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          gGetMenuIcon(path: gCategoryIcon, color: gInactiveNavIconColor),
+                          gGetMenuIcon(
+                              path: gCategoryIcon,
+                              color: gInactiveNavIconColor),
                           SizedBox(width: gDefaultMargin / 4),
                           Text(
                             courseCategory,

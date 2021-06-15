@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'UI/Course/courseScreen.dart';
 import 'UI/common/constants.dart';
 
 import 'UI/Settings/settingsScreen.dart';
@@ -40,6 +41,7 @@ class MyApp extends StatelessWidget {
         MyCoursesScreen.route: (context) => MyCoursesScreen(),
         BookmarksScreen.route: (context) => BookmarksScreen(),
         CategoryScreen.route: (context) => CategoryScreen(),
+        CourseScreen.route: (context) => CourseScreen(),
       },
     );
   }

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 
 import '/UI/common/constants.dart';
 import '/UI/common/blurAppBar.dart';
+import '/UI/Settings/settingsScreen.dart';
 
 import '../localConstants.dart';
 
-BlurAppBar settingsAppBar(BuildContext context) {
+BlurAppBar courseAppBar(BuildContext context, String categoryName) {
   return BlurAppBar(
     padding: EdgeInsets.only(
       left: gDefaultMargin,
@@ -18,7 +19,7 @@ BlurAppBar settingsAppBar(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () => Navigator.of(context).maybePop(),
+          onTap: () => Navigator.of(context).pop(),
           child: Icon(
             Icons.arrow_back_ios_new_rounded,
             color: gHeadingTextColor,
@@ -28,7 +29,7 @@ BlurAppBar settingsAppBar(BuildContext context) {
         Padding(
           padding:
               EdgeInsets.only(left: gDefaultMargin / 8, top: gDefaultMargin),
-          child: Text('Settings', style: gScreenHeaderStyle),
+          child: Text(categoryName, style: gScreenHeaderStyle),
         ),
       ],
     ),

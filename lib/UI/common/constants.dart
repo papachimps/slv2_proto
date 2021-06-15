@@ -16,7 +16,7 @@ const gThemeOrangeColor2 = Color(0xffFC573B);
 const gHeadingTextColor = Color(0xff212523);
 const gSubHeadingTextColor = Color(0xff88889D);
 const gTitleTextColor = Color(0xff5A6175);
-const gSubTitleTextColor = Color(0xff88889D);
+const gSubTitleTextColor = gSubHeadingTextColor;
 const gCourseCardTitleTextColor = Color(0xff4C4B68);
 
 const gAppBarColor = Color(0xffF2F4F8);
