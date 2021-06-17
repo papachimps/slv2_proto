@@ -29,9 +29,10 @@ class LeaderBoardListTile extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: lDefaultMargin),
       decoration: ShapeDecoration(
         shape: ContinuousRectangleBorder(
-          borderRadius: BorderRadius.circular(gDefaultMargin * 2),
+          borderRadius: BorderRadius.circular(gDefaultTextMargin * 2),
         ),
         color: isCurrentUser ? gSpiceRed2 : gPrimaryWhiteBG,
+        shadows: lLeaderBoardTileShadows,
       ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,

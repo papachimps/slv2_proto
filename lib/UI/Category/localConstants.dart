@@ -13,3 +13,12 @@ TextStyle lTabLabelTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w600,
   height: (1.32) * gScaleFactor,
 );
+
+List<BoxShadow> lLeaderBoardTileShadows = [
+  BoxShadow(
+    color: Color(0xff160029).withOpacity(0.16),
+    blurRadius: 12,
+    spreadRadius: -7,
+    offset: Offset(0, 5),
+  ),
+];

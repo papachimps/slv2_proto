@@ -205,6 +205,12 @@ class _ModuleTileState extends State<ModuleTile> {
                     blurRadius: 16,
                     spreadRadius: 0,
                     offset: Offset(0, 8),
+                  ),
+                  BoxShadow(
+                    color: Color(0xff111111).withOpacity(0.10),
+                    blurRadius: 16,
+                    spreadRadius: 0,
+                    offset: Offset(0, 8),
                   )
                 ],
               )

@@ -7,6 +7,7 @@ import 'constants.dart';
 import '/UI/Home/homeScreen.dart';
 import '/UI/MyCourses/myCoursesScreen.dart';
 import '/UI/Bookmarks/bookmarksScreen.dart';
+import '/UI/Profile/profileScreen.dart';
 
 class BottomNavBar extends StatelessWidget {
   final String activeRoute;
@@ -57,7 +58,7 @@ class BottomNavBar extends StatelessWidget {
                 navBarItem(
                   context: context,
                   iconPath: gProfileNavBarIcon,
-                  screenRouteName: HomeScreen.route,
+                  screenRouteName: ProfileScreen.route,
                   activeRoute: activeRoute,
                 ),
               ],

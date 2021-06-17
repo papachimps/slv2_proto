@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'UI/Course/courseScreen.dart';
 import 'UI/common/constants.dart';
 
 import 'UI/Settings/settingsScreen.dart';
@@ -11,6 +10,8 @@ import 'UI/Home/homeScreen.dart';
 import 'UI/MyCourses/myCoursesScreen.dart';
 import 'UI/Bookmarks/bookmarksScreen.dart';
 import 'UI/Category/categoryScreen.dart';
+import 'UI/Course/courseScreen.dart';
+import 'UI/Profile/profileScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,6 +43,7 @@ class MyApp extends StatelessWidget {
         BookmarksScreen.route: (context) => BookmarksScreen(),
         CategoryScreen.route: (context) => CategoryScreen(),
         CourseScreen.route: (context) => CourseScreen(),
+        ProfileScreen.route: (context)=> ProfileScreen(),
       },
     );
   }
