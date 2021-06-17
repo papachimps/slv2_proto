@@ -1,6 +1,8 @@
+// import 'package:flutter/services.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:slv2/UI/common/players/videoPlayer.dart';
 
 import '/UI/common/constants.dart';
 import '/UI/common/bottomNavBar.dart';
@@ -22,6 +24,7 @@ class CourseScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
@@ -331,17 +334,11 @@ class _ModuleTileState extends State<ModuleTile> {
                       color: gThemeOrangeColor2,
                       shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.circular(gDefaultMargin)),
-                      onPressed: () => Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => Scaffold(
-                            body: Center(
-                              child: Text(
-                                'Module #${widget.index + 1} opened. \n Module type: ${widget.moduleType} \nOrientation: ${widget.orientation}',
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                        ),
+                      onPressed: () => onModuleBeginPressed(
+                        context,
+                        widget.index + 1,
+                        widget.moduleType,
+                        widget.orientation,
                       ),
                       child: Text(
                         'Begin',
@@ -360,4 +357,34 @@ class _ModuleTileState extends State<ModuleTile> {
       ),
     );
   }
+}
+
+void onModuleBeginPressed(
+  BuildContext context,
+  int moduleId,
+  ModuleType moduleType,
+  Orientation orientation,
+) {
+  String _moduleDefinedRoute() {
+    switch (moduleType) {
+      case ModuleType.Video:
+        return VideoPlayer.route;
+
+      case ModuleType.Doc:
+        return VideoPlayer.route;
+
+      case ModuleType.Interactive:
+        return VideoPlayer.route;
+
+      default: //ModuleType.Web
+        return VideoPlayer.route;
+    }
+  }
+  
+  print('working $orientation, $moduleId, $moduleType');
+
+  Navigator.of(context).pushNamed(_moduleDefinedRoute(), arguments: {
+    'moduleId': moduleId,
+    'orientation': orientation,
+  });
 }

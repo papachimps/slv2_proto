@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'UI/common/constants.dart';
+import '/UI/common/players/videoPlayer.dart';
 
 import 'UI/Settings/settingsScreen.dart';
 import 'UI/Search/searchScreen.dart';
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      initialRoute: HomeScreen.route,
+      initialRoute: CourseScreen.route,
       routes: {
         SettingsScreen.route: (context) => SettingsScreen(),
         SearchScreen.route: (context) => SearchScreen(),
@@ -44,6 +45,7 @@ class MyApp extends StatelessWidget {
         CategoryScreen.route: (context) => CategoryScreen(),
         CourseScreen.route: (context) => CourseScreen(),
         ProfileScreen.route: (context)=> ProfileScreen(),
+        VideoPlayer.route: (context)=> VideoPlayer(),
       },
     );
   }
