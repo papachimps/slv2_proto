@@ -4,6 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 
 import 'UI/common/constants.dart';
 import '/UI/common/players/videoPlayer.dart';
+import '/UI/common/players/WebViewer.dart';
+import 'UI/common/players/pdfPlayer.dart';
 
 import 'UI/Settings/settingsScreen.dart';
 import 'UI/Search/searchScreen.dart';
@@ -15,6 +17,7 @@ import 'UI/Course/courseScreen.dart';
 import 'UI/Profile/profileScreen.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(MyApp());
 }
 
@@ -28,6 +31,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: gThemeOrangeColor,
         accentColor: gThemeOrangeColor,
+        scaffoldBackgroundColor: gPrimaryWhiteBG,
         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         pageTransitionsTheme: PageTransitionsTheme(
           builders: {
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       initialRoute: CourseScreen.route,
+      // home: (),
       routes: {
         SettingsScreen.route: (context) => SettingsScreen(),
         SearchScreen.route: (context) => SearchScreen(),
@@ -44,8 +49,10 @@ class MyApp extends StatelessWidget {
         BookmarksScreen.route: (context) => BookmarksScreen(),
         CategoryScreen.route: (context) => CategoryScreen(),
         CourseScreen.route: (context) => CourseScreen(),
-        ProfileScreen.route: (context)=> ProfileScreen(),
-        VideoPlayer.route: (context)=> VideoPlayer(),
+        ProfileScreen.route: (context) => ProfileScreen(),
+        VideoPlayer.route: (context) => VideoPlayer(),
+        WebViewer.route: (context) => WebViewer(),
+        PdfPlayer.route: (context) => PdfPlayer(),
       },
     );
   }

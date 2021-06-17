@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_color/random_color.dart';
@@ -174,4 +175,13 @@ String getImageUrl(int index) => 'https://picsum.photos/600/400?random=$index';
 String randomImageUrl({int range = 10}) {
   return 'https://picsum.photos/600/400?random=' +
       Random().nextInt(range).toString();
+}
+
+List<DeviceOrientation> handleOrientation(Orientation orientation) {
+  return orientation == Orientation.landscape
+      ? [
+          DeviceOrientation.landscapeRight,
+          DeviceOrientation.landscapeLeft,
+        ]
+      : [DeviceOrientation.portraitUp];
 }

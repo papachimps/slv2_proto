@@ -2,6 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flick_video_player/flick_video_player.dart';
+import 'package:slv2/UI/common/constants.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayer extends StatefulWidget {
@@ -10,7 +11,7 @@ class VideoPlayer extends StatefulWidget {
   _VideoPlayerState createState() => _VideoPlayerState();
 }
 
-const String URL =
+const String VIDEO_URL =
     'https://firebasestorage.googleapis.com/v0/b/spicemilestones.appspot.com/o/ModuleContents%2Fvideos%2FDeep%20Breathing%20low%20noise.mp4?alt=media';
 
 class _VideoPlayerState extends State<VideoPlayer> {
@@ -24,29 +25,22 @@ class _VideoPlayerState extends State<VideoPlayer> {
     super.initState();
     // SystemChrome.setPreferredOrientations(handleOrientation);
     flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.network(URL),
+      videoPlayerController: VideoPlayerController.network(VIDEO_URL),
     );
   }
 
   @override
   void dispose() {
+    super.dispose();
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     SystemChrome.setEnabledSystemUIOverlays([
       SystemUiOverlay.top,
       SystemUiOverlay.bottom,
     ]);
     flickManager.dispose();
-    super.dispose();
   }
 
-  List<DeviceOrientation> get handleOrientation {
-    return orientation == Orientation.landscape
-        ? [
-            DeviceOrientation.landscapeRight,
-            DeviceOrientation.landscapeLeft,
-          ]
-        : [DeviceOrientation.portraitUp];
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -66,14 +60,14 @@ class _VideoPlayerState extends State<VideoPlayer> {
                 iconSize: 0,
                 fontSize: 14,
                 progressBarSettings: FlickProgressBarSettings(
-                  playedColor: Color(0xffED1B23),
-                  handleColor: Color(0xffED1B23),
+                  playedColor: gSpiceRed,
+                  handleColor: gSpiceRed,
                   handleRadius: 8,
                   height: 4,
                 ),
               ),
             ),
-            preferredDeviceOrientation: handleOrientation,
+            preferredDeviceOrientation: handleOrientation(orientation),
             systemUIOverlay: [],
             wakelockEnabled: true,
           ),
@@ -92,7 +86,6 @@ class _VideoPlayerState extends State<VideoPlayer> {
                 ),
               ),
               height: 26,
-
               color: Colors.white.withOpacity(0.8),
               child: Icon(
                 Icons.close_rounded,

@@ -2,10 +2,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:slv2/UI/common/players/videoPlayer.dart';
 
 import '/UI/common/constants.dart';
 import '/UI/common/bottomNavBar.dart';
+import '/UI/common/players/videoPlayer.dart';
+import '/UI/common/players/webViewer.dart';
+import '/UI/common/players/pdfPlayer.dart';
 
 import 'localConstants.dart';
 import 'components/courseAppBar.dart';
@@ -163,7 +165,7 @@ class ModuleTile extends StatefulWidget {
     required this.moduleType,
     required this.description,
     this.date = '03 Aug',
-    this.orientation = Orientation.portrait,
+    this.orientation = Orientation.landscape,
   });
 
   @override
@@ -173,6 +175,21 @@ class ModuleTile extends StatefulWidget {
 class _ModuleTileState extends State<ModuleTile> {
   bool _isExpanded = false;
   bool _animationEnded = false;
+  final GlobalKey expansionTileKey = GlobalKey();
+
+  void _scrollToSelectedContent({required GlobalKey expansionTileKey}) {
+    final keyContext = expansionTileKey.currentContext;
+    if (keyContext != null) {
+      // Future.delayed(Duration(milliseconds: 200)).then((value) {
+      Scrollable.ensureVisible(
+        keyContext,
+        alignment: 0.75,
+        duration: Duration(milliseconds: 600),
+        curve: Curves.ease,
+      );
+      // });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -186,6 +203,7 @@ class _ModuleTileState extends State<ModuleTile> {
         });
       },
       child: AnimatedContainer(
+        key: expansionTileKey,
         margin: EdgeInsets.symmetric(vertical: gDefaultMargin / 2),
         padding: EdgeInsets.symmetric(
           horizontal: gDefaultMargin,
@@ -230,6 +248,7 @@ class _ModuleTileState extends State<ModuleTile> {
               _isExpanded = false;
             }
           });
+          _scrollToSelectedContent(expansionTileKey: expansionTileKey);
           print('animation ended');
         },
         child: Column(
@@ -371,16 +390,16 @@ void onModuleBeginPressed(
         return VideoPlayer.route;
 
       case ModuleType.Doc:
-        return VideoPlayer.route;
+        return PdfPlayer.route;
 
       case ModuleType.Interactive:
-        return VideoPlayer.route;
+        return WebViewer.route;
 
       default: //ModuleType.Web
-        return VideoPlayer.route;
+        return WebViewer.route;
     }
   }
-  
+
   print('working $orientation, $moduleId, $moduleType');
 
   Navigator.of(context).pushNamed(_moduleDefinedRoute(), arguments: {
