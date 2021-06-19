@@ -147,7 +147,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          gGetMenuIcon(
+                          gGetSvgIcon(
                               path: gCategoryIcon,
                               color: gInactiveNavIconColor),
                           SizedBox(width: gDefaultMargin / 4),

@@ -85,7 +85,7 @@ class BottomNavBar extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          gGetMenuIcon(
+          gGetSvgIcon(
             path: iconPath,
             color: activeRoute == screenRouteName
                 ? gThemeOrangeColor

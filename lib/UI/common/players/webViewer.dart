@@ -1,5 +1,5 @@
 // import 'dart:io';
-import 'dart:math';
+// import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -14,7 +14,7 @@ String webURL = [
   "https://spicemilestones.web.app/session2021-22-inf.html",
   'https://spicemilestones.firebaseapp.com/cmd_desk_may2021.html',
   "https://spicemilestones.web.app/spicefeed-inf.html",
-].last;
+].first;
 
 class WebViewer extends StatefulWidget {
   static const String route = 'webview';

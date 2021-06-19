@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'UI/common/constants.dart';
@@ -18,6 +19,15 @@ import 'UI/Profile/profileScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  SystemChrome.setEnabledSystemUIOverlays([
+    SystemUiOverlay.bottom,
+    SystemUiOverlay.top,
+  ]);
+  // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+  //   systemNavigationBarColor: gPrimaryWhiteBG,
+  //   systemNavigationBarDividerColor: gPrimaryWhiteBG,
+  // ));
   runApp(MyApp());
 }
 
@@ -39,8 +49,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      initialRoute: CourseScreen.route,
-      // home: (),
+      initialRoute: HomeScreen.route,
       routes: {
         SettingsScreen.route: (context) => SettingsScreen(),
         SearchScreen.route: (context) => SearchScreen(),

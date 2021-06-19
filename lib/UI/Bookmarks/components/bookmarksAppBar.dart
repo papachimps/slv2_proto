@@ -26,7 +26,7 @@ BlurAppBar bookmarksAppBar(BuildContext context) {
               left: gDefaultMargin,
               right: gDefaultMargin,
             ),
-            child: gGetMenuIcon(path: gHamburgerAppBarIcon),
+            child: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
           ),
         ),
         Padding(

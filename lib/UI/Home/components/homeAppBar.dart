@@ -20,12 +20,12 @@ BlurAppBar homeAppBar(BuildContext context) {
       children: [
         GestureDetector(
           onTap: () => Navigator.of(context).pushNamed(SettingsScreen.route),
-          child: gGetMenuIcon(path: gHamburgerAppBarIcon),
+          child: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
         ),
         Text('SpiceLearn', style: gAppBarTitleTextStyle),
         GestureDetector(
           onTap: () => Navigator.of(context).pushNamed(SearchScreen.route),
-          child: gGetMenuIcon(path: gSearchAppBarIcon),
+          child: gGetSvgIcon(path: gSearchAppBarIcon, color: gPrimaryBlack),
         ),
       ],
     ),

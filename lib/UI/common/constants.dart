@@ -142,9 +142,9 @@ List<BoxShadow> gBoxShadows = [
   ),
 ];
 
-Widget gGetMenuIcon({
+Widget gGetSvgIcon({
   required String path,
-  Color? color = gPrimaryBlack,
+  Color? color,
   double? size,
 }) =>
     SvgPicture.asset(
@@ -185,3 +185,7 @@ List<DeviceOrientation> handleOrientation(Orientation orientation) {
         ]
       : [DeviceOrientation.portraitUp];
 }
+
+
+//  onPressed: () => Navigator.of(context).pushNamedAndRemoveUntil(
+//               SettingsScreen.route, ModalRoute.withName(HomeScreen.route)),

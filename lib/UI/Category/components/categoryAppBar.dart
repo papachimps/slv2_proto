@@ -24,7 +24,7 @@ BlurAppBar categoryAppBar(BuildContext context, String categoryTitle) {
               left: gDefaultMargin,
               right: gDefaultMargin,
             ),
-            child: gGetMenuIcon(path: gHamburgerAppBarIcon),
+            child: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
           ),
         ),
         Container(

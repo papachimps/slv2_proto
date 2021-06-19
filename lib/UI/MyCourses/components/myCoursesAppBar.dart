@@ -27,11 +27,11 @@ BlurAppBar myCoursesAppBar(BuildContext context) {
             GestureDetector(
               onTap: () =>
                   Navigator.of(context).pushNamed(SettingsScreen.route),
-              child: gGetMenuIcon(path: gHamburgerAppBarIcon),
+              child: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
             ),
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed(SearchScreen.route),
-              child: gGetMenuIcon(path: gSearchAppBarIcon),
+              child: gGetSvgIcon(path: gSearchAppBarIcon, color: gPrimaryBlack),
             ),
           ],
         ),

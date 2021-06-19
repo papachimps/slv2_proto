@@ -26,7 +26,7 @@ class SearchAndFilterBlock extends StatelessWidget {
               fillColor: Colors.white,
               prefixIcon: Padding(
                 padding: EdgeInsets.symmetric(vertical: gDefaultMargin2 / 2),
-                child: gGetMenuIcon(
+                child: gGetSvgIcon(
                   path: gSearchAppBarIcon,
                   color: gSubTitleTextColor,
                   size: gDefaultMargin2,
