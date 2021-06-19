@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:slv2/UI/Home/homeScreen.dart';
-import 'package:slv2/UI/Settings/settingsScreen.dart';
-// import 'package:slv2/UI/Settings/settingsScreen.dart';
 
 import '/UI/common/constants.dart';
 import '/UI/common/bottomNavBar.dart';
 
+import '/UI/Settings/settingsScreen.dart';
+
 import 'localConstants.dart';
+import 'leaderBoardScreen/leaderboardScreen.dart';
+import 'editProfileScreen/editProfileScreen.dart';
 
 // import 'components/profileAppBar.dart';
 
@@ -49,25 +50,9 @@ class ProfileScreen extends StatelessWidget {
           image: DecorationImage(
             alignment: Alignment.topCenter,
             fit: BoxFit.fitWidth,
-            image: AssetImage(
-              'assets/images/profileBG.png',
-            ),
+            image: AssetImage(lRedPlanesBGPath),
           ),
         ),
-        // child: NotificationListener<ScrollUpdateNotification>(
-        //   onNotification: (notification) {
-        //     //List scroll position
-        //     // notification.metrics.
-        //     if (notification.metrics.pixels >= lDefaultMargin * 6)
-        //       // setState(() {
-        //       isBackGroundWhite = true;
-        //     // });
-        //     else
-        //       // setState(() {
-        //       isBackGroundWhite = false;
-        //     // });
-        //     return false;
-        //   },
         child: ListView(
           shrinkWrap: true,
           padding: EdgeInsets.zero,
@@ -124,6 +109,7 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ),
                 //
+
                 //profile pic
                 Positioned(
                   top: -lDefaultMargin * 5 / 2,
@@ -131,8 +117,10 @@ class ProfileScreen extends StatelessWidget {
                     height: lDefaultMargin * 5,
                     width: lDefaultMargin * 5,
                     child: FloatingActionButton(
+                      heroTag: 'Profile Pic',
                       elevation: 32,
-                      onPressed: () {},
+                      onPressed: () => Navigator.of(context)
+                          .pushNamed(EditProfileScreen.route),
                       backgroundColor: Colors.white,
                       child: CircleAvatar(
                         radius: lDefaultMargin * 2.5 - 2,
@@ -164,7 +152,6 @@ class ProfileScreen extends StatelessWidget {
                   padding: EdgeInsets.zero,
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    // SizedBox(height: lDefaultMargin * 8),
                     //stats, leaderboard, notification
                     Container(
                       // height: lDefaultMargin * 30,
@@ -178,6 +165,8 @@ class ProfileScreen extends StatelessWidget {
                           ))),
                     ),
                     //
+
+                    // stats block
                     Padding(
                       padding: EdgeInsets.fromLTRB(
                         gDefaultMargin * 2,
@@ -193,7 +182,6 @@ class ProfileScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    // stats block
                     WhiteCurvedBlock(
                       height: gDefaultMargin * 7,
                       child: Row(
@@ -239,8 +227,8 @@ class ProfileScreen extends StatelessWidget {
                     ),
                     //
 
-                    //achievements block
                     SizedBox(height: gDefaultMargin * 2),
+                    //achievements block
                     WhiteCurvedBlock(
                       height: lDefaultMargin * 9,
                       child: Column(
@@ -302,9 +290,8 @@ class ProfileScreen extends StatelessWidget {
                         )),
                       ),
                       child: GestureDetector(
-                        onTap: () => Navigator.of(context).push(
-                          emptyMockRoute(title: 'Department Leaderboard'),
-                        ),
+                        onTap: () => Navigator.of(context)
+                            .pushNamed(DepartmentLeaderboardScreen.route),
                         child: Container(
                           alignment: Alignment.topRight,
                           // color: gSpiceRed,
@@ -335,7 +322,6 @@ class ProfileScreen extends StatelessWidget {
           ],
         ),
       ),
-      // ),
     );
   }
 

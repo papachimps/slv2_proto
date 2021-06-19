@@ -8,14 +8,16 @@ import '/UI/common/players/videoPlayer.dart';
 import '/UI/common/players/WebViewer.dart';
 import 'UI/common/players/pdfPlayer.dart';
 
+import 'UI/Home/homeScreen.dart';
 import 'UI/Settings/settingsScreen.dart';
 import 'UI/Search/searchScreen.dart';
-import 'UI/Home/homeScreen.dart';
 import 'UI/MyCourses/myCoursesScreen.dart';
 import 'UI/Bookmarks/bookmarksScreen.dart';
 import 'UI/Category/categoryScreen.dart';
 import 'UI/Course/courseScreen.dart';
 import 'UI/Profile/profileScreen.dart';
+import 'UI/Profile/leaderBoardScreen/leaderboardScreen.dart';
+import 'UI/Profile/editProfileScreen/editProfileScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -49,16 +51,18 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      initialRoute: HomeScreen.route,
+      initialRoute: ProfileScreen.route,
       routes: {
+        HomeScreen.route: (context) => HomeScreen(),
         SettingsScreen.route: (context) => SettingsScreen(),
         SearchScreen.route: (context) => SearchScreen(),
-        HomeScreen.route: (context) => HomeScreen(),
         MyCoursesScreen.route: (context) => MyCoursesScreen(),
         BookmarksScreen.route: (context) => BookmarksScreen(),
         CategoryScreen.route: (context) => CategoryScreen(),
         CourseScreen.route: (context) => CourseScreen(),
         ProfileScreen.route: (context) => ProfileScreen(),
+        DepartmentLeaderboardScreen.route: (context) => DepartmentLeaderboardScreen(),
+        EditProfileScreen.route: (context) => EditProfileScreen(),
         VideoPlayer.route: (context) => VideoPlayer(),
         WebViewer.route: (context) => WebViewer(),
         PdfPlayer.route: (context) => PdfPlayer(),

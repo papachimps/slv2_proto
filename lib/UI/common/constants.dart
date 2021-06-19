@@ -170,7 +170,7 @@ const gProfileNavBarIcon = 'assets/images/profile.svg';
 final randomColor = RandomColor();
 final faker = new Faker();
 // List<int> randIds = [Random().nextInt(100) * 124];
-String getImageUrl(int index) => 'https://picsum.photos/600/400?random=$index';
+String getImageUrl(int index) => 'https://picsum.photos/600?random=$index';
 
 String randomImageUrl({int range = 10}) {
   return 'https://picsum.photos/600/400?random=' +
