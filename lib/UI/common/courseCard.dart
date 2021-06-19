@@ -50,7 +50,7 @@ class CourseCard extends StatelessWidget {
                   ),
                   shadows: gBoxShadows,
                   image: DecorationImage(
-                    fit: BoxFit.fitHeight,
+                    fit: BoxFit.cover,
                     image: imageProvider,
                   ),
                 ),

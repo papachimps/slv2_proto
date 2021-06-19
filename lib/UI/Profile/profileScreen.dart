@@ -24,21 +24,27 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: IconButton(
-          onPressed: () =>
-              Navigator.of(context).pushNamed(SettingsScreen.route),
-          icon: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
+        leading: Padding(
+          padding: EdgeInsets.only(top: lDefaultMargin / 2),
+          child: IconButton(
+            onPressed: () =>
+                Navigator.of(context).pushNamed(SettingsScreen.route),
+            icon: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
+          ),
         ),
         actions: [
-          IconButton(
-            onPressed: () => Navigator.of(context).push(
-              emptyMockRoute(title: 'Notifications'),
-            ),
-            icon: Icon(
-              // Icons.more_horiz_rounded,
-              Icons.notifications_none_outlined,
-              color: gPrimaryBlack,
-              size: gDefaultTextMargin * 1.5,
+          Padding(
+            padding: EdgeInsets.only(top: lDefaultMargin / 2),
+            child: IconButton(
+              onPressed: () => Navigator.of(context).push(
+                emptyMockRoute(title: 'Notifications'),
+              ),
+              icon: Icon(
+                // Icons.more_horiz_rounded,
+                Icons.notifications_none_outlined,
+                color: gPrimaryBlack,
+                size: gDefaultTextMargin * 1.5,
+              ),
             ),
           ),
           SizedBox(width: gDefaultMargin),
@@ -118,10 +124,10 @@ class ProfileScreen extends StatelessWidget {
                     width: lDefaultMargin * 5,
                     child: FloatingActionButton(
                       heroTag: 'Profile Pic',
+                      backgroundColor: Colors.white,
                       elevation: 32,
                       onPressed: () => Navigator.of(context)
                           .pushNamed(EditProfileScreen.route),
-                      backgroundColor: Colors.white,
                       child: CircleAvatar(
                         radius: lDefaultMargin * 2.5 - 2,
                         backgroundColor: gThemeOrangeColor,

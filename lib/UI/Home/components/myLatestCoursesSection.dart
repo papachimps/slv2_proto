@@ -75,6 +75,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                 width: cardWidth,
                 // height: 135 * gScaleFactor,
                 imageUrl: courseImageUrl,
+
                 placeholder: (context, url) => Container(
                     constraints: BoxConstraints.expand(),
                     decoration: ShapeDecoration(
@@ -98,7 +99,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                       ),
                     ),
                     image: DecorationImage(
-                      fit: BoxFit.fitHeight,
+                      fit: BoxFit.cover,
                       image: imageProvider,
                     ),
                   ),

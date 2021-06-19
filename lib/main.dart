@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
           },
         ),
       ),
-      initialRoute: ProfileScreen.route,
+      initialRoute: HomeScreen.route,
       routes: {
         HomeScreen.route: (context) => HomeScreen(),
         SettingsScreen.route: (context) => SettingsScreen(),
