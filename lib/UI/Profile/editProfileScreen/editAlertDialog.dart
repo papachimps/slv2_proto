@@ -5,7 +5,7 @@ import '/UI/common/constants.dart';
 import '../localConstants.dart';
 
 var alertStyle = AlertStyle(
-  alertPadding: EdgeInsets.all(2.5 * lDefaultMargin),
+  alertPadding: EdgeInsets.symmetric(horizontal: lDefaultMargin*2),
   overlayColor: Colors.black38,
   isCloseButton: false,
   isOverlayTapDismiss: true,
@@ -30,7 +30,7 @@ DialogButton templateDialogButton({
 }) =>
     DialogButton(
       height: 2 * lDefaultMargin,
-      width: 148 * gScaleFactor,
+      // width: 148 * gScaleFactor,
       radius: BorderRadius.circular(lDefaultMargin / 2),
       color: color,
       child: Text(
@@ -40,7 +40,7 @@ DialogButton templateDialogButton({
       onPressed: onPressed,
     );
 
-/// on pressing logout button; show alert box
+/// on pressing edit floating button; show alert box
 // using rflutter_alert package for custom alert box
 Alert showEditPicAlertDialog({
   required BuildContext context,
