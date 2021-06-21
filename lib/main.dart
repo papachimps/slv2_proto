@@ -3,21 +3,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'UI/common/constants.dart';
-import '/UI/common/players/videoPlayer.dart';
-import '/UI/common/players/WebViewer.dart';
-import 'UI/common/players/pdfPlayer.dart';
+import '/views/common/constants.dart';
+import '/views/common/players/videoPlayer.dart';
+import '/views/common/players/WebViewer.dart';
+import '/views/common/players/pdfPlayer.dart';
 
-import 'UI/Home/homeScreen.dart';
-import 'UI/Settings/settingsScreen.dart';
-import 'UI/Search/searchScreen.dart';
-import 'UI/MyCourses/myCoursesScreen.dart';
-import 'UI/Bookmarks/bookmarksScreen.dart';
-import 'UI/Category/categoryScreen.dart';
-import 'UI/Course/courseScreen.dart';
-import 'UI/Profile/profileScreen.dart';
-import 'UI/Profile/leaderBoardScreen/leaderboardScreen.dart';
-import 'UI/Profile/editProfileScreen/editProfileScreen.dart';
+import '/views/Home/homeScreen.dart';
+import '/views/Settings/settingsScreen.dart';
+import '/views/Search/searchScreen.dart';
+import '/views/MyCourses/myCoursesScreen.dart';
+import '/views/Bookmarks/bookmarksScreen.dart';
+import '/views/Category/categoryScreen.dart';
+import '/views/Course/courseScreen.dart';
+import '/views/Profile/profileScreen.dart';
+import '/views/Profile/leaderBoardScreen/leaderboardScreen.dart';
+import '/views/Profile/editProfileScreen/editProfileScreen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

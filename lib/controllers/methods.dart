@@ -1,4 +1,4 @@
-import '/Backend/Models/course.dart';
+import '/models/course.dart';
 
 // get bookmarkedCourses
 List<Course> bookmarkedCourses(List<Course> courses) {
