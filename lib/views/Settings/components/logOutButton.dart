@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 import '../localConstants.dart';
 
 //bottom logout button

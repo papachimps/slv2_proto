@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/Course/courseScreen.dart';
+import '/views/common/constants.dart';
+import '/views/Course/courseScreen.dart';
 
 import '../localConstants.dart';
 
@@ -13,6 +13,7 @@ class MyLatestCoursesSection extends StatelessWidget {
       height: (250 + 16) * gScaleFactor,
       width: double.infinity,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.symmetric(horizontal: gDefaultMargin / 2),
           // padding: ,

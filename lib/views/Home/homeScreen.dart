@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
 
 import 'localConstants.dart';
 import 'components/homeAppBar.dart';
@@ -22,6 +22,7 @@ class HomeScreen extends StatelessWidget {
       appBar: homeAppBar(context),
       bottomNavigationBar: BottomNavBar(activeRoute: HomeScreen.route),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
           //Updates Section
           Padding(

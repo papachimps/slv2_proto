@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 import '../localConstants.dart';
 
 import 'editAlertDialog.dart';
@@ -31,6 +31,7 @@ class EditProfileScreen extends StatelessWidget {
         ),
       ),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [

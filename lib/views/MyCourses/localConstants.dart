@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 
 double lDefaultMargin = gDefaultMargin2; //24
 double lAppBarHeight = 180 * gScaleFactor;

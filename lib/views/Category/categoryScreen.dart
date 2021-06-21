@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
 
 // import 'localConstants.dart';
 import 'components/categoryCoursesListing.dart';
@@ -28,6 +28,7 @@ class CategoryScreen extends StatelessWidget {
         bottomNavigationBar: BottomNavBar(activeRoute: 'None'),
         appBar: categoryAppBar(context, categoryTitle),
         body: TabBarView(
+          physics: BouncingScrollPhysics(),
           children: [
             //Category Listing
             CategoryCoursesListing(coursesCount: coursesCount),

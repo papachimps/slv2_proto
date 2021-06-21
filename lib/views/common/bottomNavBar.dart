@@ -1,13 +1,13 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '/UI/common/routeTransition.dart';
+import '/views/common/routeTransition.dart';
 
 import 'constants.dart';
 
-import '/UI/Home/homeScreen.dart';
-import '/UI/MyCourses/myCoursesScreen.dart';
-import '/UI/Bookmarks/bookmarksScreen.dart';
-import '/UI/Profile/profileScreen.dart';
+import '/views/Home/homeScreen.dart';
+import '/views/MyCourses/myCoursesScreen.dart';
+import '/views/Bookmarks/bookmarksScreen.dart';
+import '/views/Profile/profileScreen.dart';
 
 class BottomNavBar extends StatelessWidget {
   final String activeRoute;

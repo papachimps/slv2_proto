@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 
 import '../localConstants.dart';
 import 'categoryChip.dart';
@@ -18,6 +18,7 @@ class CategoriesListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      physics: BouncingScrollPhysics(),
       padding: EdgeInsets.symmetric(
         vertical: lDefaultMargin / 2,
         horizontal: gDefaultMargin,

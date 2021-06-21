@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
 
-import '/UI/Settings/settingsScreen.dart';
+import '/views/Settings/settingsScreen.dart';
 
 import 'localConstants.dart';
 import 'leaderBoardScreen/leaderboardScreen.dart';
@@ -60,6 +60,7 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
         child: ListView(
+          physics: BouncingScrollPhysics(),
           shrinkWrap: true,
           padding: EdgeInsets.zero,
           children: [

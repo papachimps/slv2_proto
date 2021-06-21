@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/blurAppBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/blurAppBar.dart';
 
-import '/UI/Settings/settingsScreen.dart';
-import '/UI/Search/searchScreen.dart';
+import '/views/Settings/settingsScreen.dart';
+import '/views/Search/searchScreen.dart';
 
 BlurAppBar homeAppBar(BuildContext context) {
   return BlurAppBar(

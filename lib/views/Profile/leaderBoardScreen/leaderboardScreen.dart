@@ -2,7 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 import '../localConstants.dart';
 import 'durationFilterButton.dart';
 import 'leaderBoardListTile.dart';
@@ -18,6 +18,7 @@ class DepartmentLeaderboardScreen extends StatelessWidget {
       backgroundColor: gPrimaryWhiteBG,
       appBar: deptLeaderboardAppBar(context),
       body: CustomScrollView(
+        physics: BouncingScrollPhysics(),
         slivers: <Widget>[
           SliverAppBar(
             toolbarHeight: gAppBarHeight + gDefaultMargin,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/blurAppBar.dart';
-import '/UI/common/searchAndFilterBlock.dart';
-import '/UI/common/filtersBottomSheet.dart';
+import '/views/common/constants.dart';
+import '/views/common/blurAppBar.dart';
+import '/views/common/searchAndFilterBlock.dart';
+import '/views/common/filtersBottomSheet.dart';
 
-import '/UI/Settings/settingsScreen.dart';
+import '/views/Settings/settingsScreen.dart';
 
 import '../localConstants.dart';
 

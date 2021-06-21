@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:slv2/UI/Category/categoryScreen.dart';
-import '/UI/common/routeTransition.dart';
+import 'package:slv2/views/Category/categoryScreen.dart';
+import '/views/common/routeTransition.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 import '../localConstants.dart';
 // import 'package:random_color/random_color.dart';
 
@@ -16,6 +16,7 @@ class LibrarySection extends StatelessWidget {
       height: 140 * gScaleFactor,
       width: double.infinity,
       child: ListView.builder(
+        physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           padding: EdgeInsets.symmetric(horizontal: gDefaultMargin/2),
           // padding: ,

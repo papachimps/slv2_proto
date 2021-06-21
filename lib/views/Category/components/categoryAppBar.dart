@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/blurAppBar.dart';
-import '/UI/Settings/settingsScreen.dart';
+import '/views/common/constants.dart';
+import '/views/common/blurAppBar.dart';
+import '/views/Settings/settingsScreen.dart';
 
 
 import '../localConstants.dart';
@@ -31,6 +31,7 @@ BlurAppBar categoryAppBar(BuildContext context, String categoryTitle) {
           padding: EdgeInsets.all(gDefaultMargin),
           alignment: Alignment.topLeft,
           child: TabBar(
+            physics: BouncingScrollPhysics(),
             isScrollable: true,
             indicatorColor: gThemeOrangeColor,
             indicatorPadding: EdgeInsets.only(right: gDefaultMargin),

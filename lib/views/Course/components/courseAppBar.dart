@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/blurAppBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/blurAppBar.dart';
 
 import '../localConstants.dart';
 

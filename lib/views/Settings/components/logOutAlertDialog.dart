@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 import '../localConstants.dart';
 
 var alertStyle = AlertStyle(

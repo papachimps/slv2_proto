@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '/views/common/constants.dart';
@@ -36,37 +37,79 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Spicelearn V2_proto',
       debugShowCheckedModeBanner: false,
-      scrollBehavior: CupertinoScrollBehavior(),
+      defaultTransition: Transition.rightToLeftWithFade,
       theme: ThemeData(
         primaryColor: gThemeOrangeColor,
         accentColor: gThemeOrangeColor,
         scaffoldBackgroundColor: gPrimaryWhiteBG,
         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
-        pageTransitionsTheme: PageTransitionsTheme(
-          builders: {
-            TargetPlatform.android: CupertinoPageTransitionsBuilder(),
-          },
-        ),
+        // pageTransitionsTheme: PageTransitionsTheme(
+        //   builders: {
+        //     TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        //   },
+        // ),
       ),
+      // home: HomeScreen(),
       initialRoute: HomeScreen.route,
-      routes: {
-        HomeScreen.route: (context) => HomeScreen(),
-        SettingsScreen.route: (context) => SettingsScreen(),
-        SearchScreen.route: (context) => SearchScreen(),
-        MyCoursesScreen.route: (context) => MyCoursesScreen(),
-        BookmarksScreen.route: (context) => BookmarksScreen(),
-        CategoryScreen.route: (context) => CategoryScreen(),
-        CourseScreen.route: (context) => CourseScreen(),
-        ProfileScreen.route: (context) => ProfileScreen(),
-        DepartmentLeaderboardScreen.route: (context) => DepartmentLeaderboardScreen(),
-        EditProfileScreen.route: (context) => EditProfileScreen(),
-        VideoPlayer.route: (context) => VideoPlayer(),
-        WebViewer.route: (context) => WebViewer(),
-        PdfPlayer.route: (context) => PdfPlayer(),
-      },
+      // // get
+      getPages: [
+        GetPage(
+          name: HomeScreen.route,
+          page: () => HomeScreen(),
+        ),
+        GetPage(
+          name: SettingsScreen.route,
+          page: () => SettingsScreen(),
+        ),
+        GetPage(
+          name: SearchScreen.route,
+          page: () => SearchScreen(),
+        ),
+        GetPage(
+          name: CourseScreen.route,
+          page: () => CourseScreen(),
+        ),
+        GetPage(
+          name: MyCoursesScreen.route,
+          page: () => MyCoursesScreen(),
+        ),
+        GetPage(
+          name: BookmarksScreen.route,
+          page: () => BookmarksScreen(),
+        ),
+        GetPage(
+          name: CategoryScreen.route,
+          page: () => CategoryScreen(),
+        ),
+        GetPage(
+          name: ProfileScreen.route,
+          page: () => ProfileScreen(),
+        ),
+        GetPage(
+          name: DepartmentLeaderboardScreen.route,
+          page: () => DepartmentLeaderboardScreen(),
+        ),
+        GetPage(
+          name: EditProfileScreen.route,
+          page: () => EditProfileScreen(),
+          transition: Transition.fadeIn,
+        ),
+        GetPage(
+          name: VideoPlayer.route,
+          page: () => VideoPlayer(),
+        ),
+        GetPage(
+          name: WebViewer.route,
+          page: () => WebViewer(),
+        ),
+        GetPage(
+          name: PdfPlayer.route,
+          page: () => PdfPlayer(),
+        ),
+      ],
     );
   }
 }

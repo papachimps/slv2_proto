@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
-import '/UI/common/courseGridView.dart';
-import '/UI/MyCourses/myCoursesScreen.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
+import '/views/common/courseGridView.dart';
+import '/views/MyCourses/myCoursesScreen.dart';
 
 import 'localConstants.dart';
 
@@ -20,6 +20,7 @@ class SearchScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(activeRoute: MyCoursesScreen.route),
       appBar: searchAppBar(context),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
           CourseGridView(coursesCount: 12),
           SizedBox(height: lDefaultMargin),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
-import '/UI/common/courseGridView.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
+import '/views/common/courseGridView.dart';
 
 import 'localConstants.dart';
 import 'components/bookmarksAppBar.dart';
@@ -18,6 +18,7 @@ class BookmarksScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(activeRoute: BookmarksScreen.route),
       appBar: bookmarksAppBar(context),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         children: [
           SizedBox(height: lDefaultMargin),
           CourseGridView(coursesCount: 12),

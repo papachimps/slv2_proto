@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:pdf_render/pdf_render_widgets.dart';
 
-import '/UI/common/constants.dart';
+import '/views/common/constants.dart';
 
 const String PDF_URL =
     // 'https://www.escaux.com/rsrc/EscauxCustomerDocs/DRD_T38Support_AdminGuide/T38_TEST_PAGES.pdf';

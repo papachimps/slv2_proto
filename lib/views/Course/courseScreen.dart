@@ -3,11 +3,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/bottomNavBar.dart';
-import '/UI/common/players/videoPlayer.dart';
-import '/UI/common/players/webViewer.dart';
-import '/UI/common/players/pdfPlayer.dart';
+import '/views/common/constants.dart';
+import '/views/common/bottomNavBar.dart';
+import '/views/common/players/videoPlayer.dart';
+import '/views/common/players/webViewer.dart';
+import '/views/common/players/pdfPlayer.dart';
 
 import 'localConstants.dart';
 import 'components/courseAppBar.dart';
@@ -34,6 +34,7 @@ class CourseScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavBar(activeRoute: 'None'),
       appBar: courseAppBar(context, courseCategoryName),
       body: ListView(
+        physics: BouncingScrollPhysics(),
         // shrinkWrap: true,
         padding: EdgeInsets.symmetric(
           horizontal: gDefaultMargin,

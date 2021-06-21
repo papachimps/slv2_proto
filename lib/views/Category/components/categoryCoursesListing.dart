@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/filtersBottomSheet.dart';
-import '/UI/common/searchAndFilterBlock.dart';
-import '/UI/common/courseGridView.dart';
+import '/views/common/constants.dart';
+import '/views/common/filtersBottomSheet.dart';
+import '/views/common/searchAndFilterBlock.dart';
+import '/views/common/courseGridView.dart';
 
 import '../localConstants.dart';
 
@@ -17,6 +17,7 @@ class CategoryCoursesListing extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: BouncingScrollPhysics(),
       slivers: <Widget>[
         SliverAppBar(
           toolbarHeight: lDefaultMargin * 3,
@@ -43,6 +44,7 @@ class CategoryCoursesListing extends StatelessWidget {
           ),
         ),
         SliverList(
+          
           delegate: SliverChildListDelegate(
             [
               Padding(

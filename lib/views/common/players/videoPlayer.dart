@@ -2,7 +2,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flick_video_player/flick_video_player.dart';
-import 'package:slv2/UI/common/constants.dart';
+import 'package:slv2/views/common/constants.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayer extends StatefulWidget {

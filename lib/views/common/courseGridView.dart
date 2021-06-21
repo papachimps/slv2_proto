@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:slv2/UI/Course/courseScreen.dart';
+import 'package:slv2/views/Course/courseScreen.dart';
 
 import 'constants.dart';
 import 'courseCard.dart';

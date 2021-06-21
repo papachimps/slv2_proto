@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:slv2/UI/common/constants.dart';
+import 'package:slv2/views/common/constants.dart';
 
 double lDefaultMargin = gDefaultMargin2; //24
 double lAppBarHeight = 104 * gScaleFactor;

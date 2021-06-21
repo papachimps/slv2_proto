@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '/UI/common/constants.dart';
-import '/UI/common/blurAppBar.dart';
+import '/views/common/constants.dart';
+import '/views/common/blurAppBar.dart';
 
-import '/UI/Settings/settingsScreen.dart';
-import '/UI/Search/searchScreen.dart';
+import '/views/Settings/settingsScreen.dart';
+import '/views/Search/searchScreen.dart';
 
 import '../localConstants.dart';
 
@@ -27,7 +27,8 @@ BlurAppBar myCoursesAppBar(BuildContext context) {
             GestureDetector(
               onTap: () =>
                   Navigator.of(context).pushNamed(SettingsScreen.route),
-              child: gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
+              child:
+                  gGetSvgIcon(path: gHamburgerAppBarIcon, color: gPrimaryBlack),
             ),
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed(SearchScreen.route),
@@ -52,6 +53,7 @@ BlurAppBar myCoursesAppBar(BuildContext context) {
             shadows: gBoxShadows,
           ),
           child: TabBar(
+            physics: BouncingScrollPhysics(),
             indicatorPadding:
                 EdgeInsets.symmetric(horizontal: gDefaultMargin / 2),
             indicatorColor: gThemeOrangeColor,

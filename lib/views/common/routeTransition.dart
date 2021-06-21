@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '/UI/Home/homeScreen.dart';
+import '/views/Home/homeScreen.dart';
 
 // ignore: todo
 ///TODO: find way to used routeName for pushing page to [PageRouteBuilder]

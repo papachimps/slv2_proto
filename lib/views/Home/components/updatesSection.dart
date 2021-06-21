@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import 'package:slv2/UI/common/constants.dart';
+import 'package:slv2/views/common/constants.dart';
 import '../localConstants.dart';
 
 // import '../imageCardButtonWithLabel.dart';
