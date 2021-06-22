@@ -1,3 +1,5 @@
+import 'package:intl/intl.dart';
+
 import 'module.dart';
 
 enum CourseCompletionStatus {
@@ -6,38 +8,71 @@ enum CourseCompletionStatus {
   OverDue,
 }
 
+String enumToString(Object object) => object.toString().split('.').last;
+
+T enumFromString<T>(String key, List<T> values) =>
+    values.firstWhere((v) => key == enumToString(v.toString()));
+
 class Course {
-  final String id;
-  final String title;
-  final String? imageUrl;
-  final DateTime lastUpdatedAt; //must be parsable format
-  final String? description;
-  final String categoryId;
-  final List<Module> modules;
+  String id;
+  String title;
+  String imgUrl;
+  String? description;
+  String categoryId;
+  DateTime lastUpdatedAt;
+  List<Module> modules;
   bool isCourseBookMarked;
   CourseCompletionStatus completionStatus;
 
   Course({
     required this.id,
     required this.title,
-    required this.lastUpdatedAt,
     required this.categoryId,
-    this.imageUrl,
+    required this.imgUrl,
     this.description,
-    this.modules = const [],
-    this.completionStatus = CourseCompletionStatus.Pending,
+    required this.lastUpdatedAt,
+    required this.modules,
     this.isCourseBookMarked = false,
+    this.completionStatus = CourseCompletionStatus.Pending,
   });
 
-  double get totalScore {
-    double _sum = 0;
-    for (Module module in modules) _sum += module.maxScorable;
-    return _sum;
-  }
+  String get formattedDate => DateFormat("dd MMM, yy").format(lastUpdatedAt);
 
-  double get userScore {
-    double _sum = 0;
-    for (Module module in modules) _sum += module.userScore;
-    return _sum;
+  double get totalScore => modules.fold(
+      0, (previousVal, module) => previousVal + module.maxScorable);
+
+  double get userScore =>
+      modules.fold(0, (previousVal, module) => previousVal + module.userScore);
+
+  Map courseObjectToMap() => {
+        'id': id,
+        'title': title,
+        'description': description,
+        'imgUrl': imgUrl,
+        'categoryId': categoryId,
+        'lastUpdatedAt': lastUpdatedAt.toIso8601String(),
+        'isCourseBookMarked': isCourseBookMarked,
+        'completionStatus': enumToString(completionStatus),
+        'modules': modules.map((m) => m.moduleObjectToMap()).toList()
+      };
+
+  static Course mapToCourseObject(courseMap) {
+    List modulesMapList = courseMap['modules'];
+    // print(modulesMapList[0]);
+    List<Module> modulesList = modulesMapList
+        .map((moduleMap) => Module.mapToModuleObject(moduleMap))
+        .toList();
+    return Course(
+      id: courseMap['id'],
+      title: courseMap['title'],
+      description: courseMap['description'],
+      categoryId: courseMap['categoryId'],
+      imgUrl: courseMap['imgUrl'],
+      lastUpdatedAt: DateTime.parse(courseMap['lastUpdatedAt']),
+      completionStatus: enumFromString(
+          courseMap['completionStatus'], CourseCompletionStatus.values),
+      isCourseBookMarked: courseMap['isCourseBookMarked'] as bool,
+      modules: modulesList,
+    );
   }
 }

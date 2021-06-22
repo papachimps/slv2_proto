@@ -9,7 +9,7 @@ import 'components/categoryLeaderboard.dart';
 import 'components/categoryAppBar.dart';
 
 class CategoryScreen extends StatelessWidget {
-  static const String route = 'category';
+  static const String route = '/category';
   final String categoryTitle;
   final int coursesCount;
 

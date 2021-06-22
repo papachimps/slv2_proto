@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,7 +39,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'Spicelearn V2_proto',
       debugShowCheckedModeBanner: false,
-      defaultTransition: Transition.rightToLeftWithFade,
+      defaultTransition: Transition.cupertino,
       theme: ThemeData(
         primaryColor: gThemeOrangeColor,
         accentColor: gThemeOrangeColor,
@@ -52,7 +51,6 @@ class MyApp extends StatelessWidget {
         //   },
         // ),
       ),
-      // home: HomeScreen(),
       initialRoute: HomeScreen.route,
       // // get
       getPages: [

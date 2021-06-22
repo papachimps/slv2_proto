@@ -2,26 +2,35 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
+import 'package:get/get.dart';
 import 'package:pdf_render/pdf_render_widgets.dart';
 
 import '/views/common/constants.dart';
 
-const String PDF_URL =
-    // 'https://www.escaux.com/rsrc/EscauxCustomerDocs/DRD_T38Support_AdminGuide/T38_TEST_PAGES.pdf';
-    // 'https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf';
-    'http://www.pdf995.com/samples/pdf.pdf';
+// const String PDF_URL =
+//     // 'https://www.escaux.com/rsrc/EscauxCustomerDocs/DRD_T38Support_AdminGuide/T38_TEST_PAGES.pdf';
+//     // 'https://www.hq.nasa.gov/alsj/a17/A17_FlightPlan.pdf';
+//     'http://www.pdf995.com/samples/pdf.pdf';
 
 class PdfPlayer extends StatefulWidget {
-  static const String route = 'pdfview';
+  static const String route = '/pdfview';
   @override
   PdfPlayerState createState() => PdfPlayerState();
 }
 
 class PdfPlayerState extends State<PdfPlayer> {
+  late String moduleId;
+  late Orientation orientation;
+  late String moduleUrl;
+
   @override
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIOverlays([]);
+    Map<String, dynamic> arguments = Get.arguments;
+    moduleId = arguments['moduleId'];
+    moduleUrl = arguments['moduleUrl'];
+    orientation = arguments['orientation'];
   }
 
   @override
@@ -36,17 +45,13 @@ class PdfPlayerState extends State<PdfPlayer> {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> arguments =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    // int moduleId = arguments['moduleId'];
-    Orientation orientation = arguments['orientation'];
     SystemChrome.setPreferredOrientations(handleOrientation(orientation));
     return Scaffold(
       backgroundColor: Colors.black,
       body: Stack(
         children: [
           FutureBuilder<File>(
-            future: DefaultCacheManager().getSingleFile(PDF_URL),
+            future: DefaultCacheManager().getSingleFile(moduleUrl),
             builder: (context, snapshot) => snapshot.hasData
                 ? PdfViewer.openFile(
                     snapshot.data!.path,
@@ -65,7 +70,9 @@ class PdfPlayerState extends State<PdfPlayer> {
             right: 0,
             child: MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                // Navigator.of(context).pop();
+                // Get.delete();
+                Get.back();
               },
               padding: EdgeInsets.zero,
               shape: CircleBorder(

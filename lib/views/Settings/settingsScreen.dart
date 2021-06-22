@@ -10,7 +10,7 @@ import 'components/logOutButton.dart';
 import 'components/logOutAlertDialog.dart';
 
 class SettingsScreen extends StatelessWidget {
-  static const String route = 'settings';
+  static const String route = '/settings';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

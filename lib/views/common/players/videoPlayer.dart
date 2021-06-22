@@ -2,30 +2,34 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flick_video_player/flick_video_player.dart';
+import 'package:get/get.dart';
 import 'package:slv2/views/common/constants.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayer extends StatefulWidget {
-  static const String route = 'video';
+  static const String route = '/video';
   @override
   _VideoPlayerState createState() => _VideoPlayerState();
 }
 
-const String VIDEO_URL =
-    'https://firebasestorage.googleapis.com/v0/b/spicemilestones.appspot.com/o/ModuleContents%2Fvideos%2FDeep%20Breathing%20low%20noise.mp4?alt=media';
+// const String VIDEO_URL =
+//     'https://firebasestorage.googleapis.com/v0/b/spicemilestones.appspot.com/o/ModuleContents%2Fvideos%2FDeep%20Breathing%20low%20noise.mp4?alt=media';
 
 class _VideoPlayerState extends State<VideoPlayer> {
-  late Map<String, dynamic> arguments;
-  late int moduleId;
-  late Orientation orientation;
-
   late FlickManager flickManager;
+  late String moduleId;
+  late Orientation orientation;
+  late String moduleUrl;
+
   @override
   void initState() {
     super.initState();
-    // SystemChrome.setPreferredOrientations(handleOrientation);
+    Map<String, dynamic> arguments = Get.arguments;
+    moduleId = arguments['moduleId'];
+    moduleUrl = arguments['moduleUrl'];
+    orientation = arguments['orientation'];
     flickManager = FlickManager(
-      videoPlayerController: VideoPlayerController.network(VIDEO_URL),
+      videoPlayerController: VideoPlayerController.network(moduleUrl),
     );
   }
 
@@ -40,15 +44,8 @@ class _VideoPlayerState extends State<VideoPlayer> {
     flickManager.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-    arguments =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    moduleId = arguments['moduleId'];
-    orientation = arguments['orientation'];
-
     return Scaffold(
       body: Stack(
         children: [
@@ -76,7 +73,9 @@ class _VideoPlayerState extends State<VideoPlayer> {
             right: 0,
             child: MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                // Navigator.of(context).pop();
+                // Get.delete();
+                Get.back();
               },
               padding: EdgeInsets.zero,
               shape: CircleBorder(

@@ -12,7 +12,7 @@ import 'editProfileScreen/editProfileScreen.dart';
 // import 'components/profileAppBar.dart';
 
 class ProfileScreen extends StatelessWidget {
-  static const String route = 'profile';
+  static const String route = '/profile';
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/blurAppBar.dart';
@@ -31,7 +32,8 @@ BlurAppBar searchAppBar(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () => Navigator.of(context).maybePop(),
+          // onTap: () => Navigator.of(context).maybePop(),
+          onTap: () => Get.back(),
           child: Padding(
             padding: EdgeInsets.only(
               left: gDefaultMargin,

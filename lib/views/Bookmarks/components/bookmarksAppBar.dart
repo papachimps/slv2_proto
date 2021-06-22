@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/blurAppBar.dart';
@@ -20,7 +21,8 @@ BlurAppBar bookmarksAppBar(BuildContext context) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () => Navigator.of(context).pushNamed(SettingsScreen.route),
+          // onTap: () => Navigator.of(context).pushNamed(SettingsScreen.route),
+          onTap: () => Get.toNamed(SettingsScreen.route),
           child: Padding(
             padding: EdgeInsets.only(
               left: gDefaultMargin,

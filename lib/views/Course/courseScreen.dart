@@ -2,6 +2,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:get/get.dart';
+
+import '/models/course.dart';
+import '/models/module.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/bottomNavBar.dart';
@@ -13,26 +17,27 @@ import 'localConstants.dart';
 import 'components/courseAppBar.dart';
 
 class CourseScreen extends StatelessWidget {
-  static const String route = 'course';
-  final String courseTitle;
-  final int modulesCount;
-  final String courseCategoryName;
+  static const String route = '/course';
+  // final String courseTitle;
+  // final int modulesCount;
+  // final String courseCategoryName;
 
-  const CourseScreen({
-    this.courseTitle = 'Pre-Flight Briefing Checklist',
-    this.modulesCount = 6,
-    this.courseCategoryName = 'Safety & Emergency Procedures',
-  });
+  // const CourseScreen({
+  //   this.courseTitle = 'Pre-Flight Briefing Checklist',
+  //   this.modulesCount = 6,
+  //   this.courseCategoryName = 'Safety & Emergency Procedures',
+  // });
 
   @override
   Widget build(BuildContext context) {
+    final Course course = Get.arguments;
     // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
       backgroundColor: gPrimaryWhiteBG,
       bottomNavigationBar: BottomNavBar(activeRoute: 'None'),
-      appBar: courseAppBar(context, courseCategoryName),
+      appBar: courseAppBar(context, course.categoryId),
       body: ListView(
         physics: BouncingScrollPhysics(),
         // shrinkWrap: true,
@@ -45,7 +50,7 @@ class CourseScreen extends StatelessWidget {
             // cacheKey: userProfileUrl,
             // width: double.infinity,
             height: 245 * gScaleFactor,
-            imageUrl: randomImageUrl(),
+            imageUrl: course.imgUrl,
             placeholder: (context, url) => Center(
                 child: CircularProgressIndicator(
               color: gThemeOrangeColor,
@@ -73,7 +78,7 @@ class CourseScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  '20' + ' Nov'.toUpperCase(),
+                  course.formattedDate.toUpperCase(),
                   style: gSubHeadingTextStyle.copyWith(
                       fontSize: 11 * gScaleFactor),
                 ),
@@ -84,7 +89,7 @@ class CourseScreen extends StatelessWidget {
                     horizontal: gDefaultMargin / 2,
                   ),
                   child: Text(
-                    '30/100 XP',
+                    '${course.userScore.toInt()}/${course.totalScore.toInt()} XP',
                     style: gFilterTitleTextStyle.copyWith(
                       color: Colors.white,
                       fontWeight: FontWeight.w500,
@@ -103,7 +108,7 @@ class CourseScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: gBaseMultiplier / 2),
             child: Text(
-              'Pre-Flight Briefing Checklist',
+              course.title,
               style: lCourseTitleTextStyle,
             ),
           ),
@@ -111,7 +116,7 @@ class CourseScreen extends StatelessWidget {
           Padding(
             padding: EdgeInsets.symmetric(horizontal: gBaseMultiplier / 2),
             child: Text(
-              'To provide better customer experience in the business. Varying from light to severe causes and impact it has on the passenger.',
+              course.description!,
               style: gSubTitleTextStyle.copyWith(
                 fontSize: 13 * gScaleFactor,
                 height: 1.65 * gScaleFactor,
@@ -119,7 +124,7 @@ class CourseScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: lDefaultMargin),
-          ModulesList(),
+          ModulesList(course.modules),
           SizedBox(height: gAppBarHeight + gDefaultMargin),
         ],
       ),
@@ -128,46 +133,28 @@ class CourseScreen extends StatelessWidget {
 }
 
 class ModulesList extends StatelessWidget {
+  final List<Module> modules;
+
+  const ModulesList(this.modules);
+
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.symmetric(vertical: gDefaultMargin / 2),
       shrinkWrap: true,
       physics: NeverScrollableScrollPhysics(),
-      itemCount: 5,
-      itemBuilder: (context, index) => ModuleTile(
-        index: index,
-        moduleType: tempModuleTypeList[index % 4],
-        description: faker.lorem.sentences(4).join(' '),
-        date: '${index + 1}'.padLeft(2, '0') +
-            ' ${faker.date.month()}'.substring(0, 4),
-        // currentExpanded: expandedModuleTileIndex,
-      ),
+      itemCount: modules.length,
+      itemBuilder: (context, index) => ModuleTile(index, modules[index]),
     );
   }
 }
 
-List tempModuleTypeList = [
-  ModuleType.Doc,
-  ModuleType.Video,
-  ModuleType.Interactive,
-  ModuleType.Web,
-];
 int expandedModuleTileIndex = 0;
 
 class ModuleTile extends StatefulWidget {
+  final Module module;
   final int index;
-  final ModuleType moduleType;
-  final String date;
-  final String description;
-  final Orientation orientation;
-  // final
-  const ModuleTile({
-    required this.index,
-    required this.moduleType,
-    required this.description,
-    this.date = '03 Aug',
-    this.orientation = Orientation.landscape,
-  });
+
+  const ModuleTile(this.index, this.module);
 
   @override
   _ModuleTileState createState() => _ModuleTileState();
@@ -194,7 +181,7 @@ class _ModuleTileState extends State<ModuleTile> {
 
   @override
   Widget build(BuildContext context) {
-    print(expandedModuleTileIndex);
+    Module module = widget.module;
     return GestureDetector(
       onTap: () {
         print('animation started');
@@ -210,7 +197,7 @@ class _ModuleTileState extends State<ModuleTile> {
           horizontal: gDefaultMargin,
           vertical: lDefaultMargin / 2,
         ),
-        height: _isExpanded ? gDefaultMargin * 15 : gDefaultMargin * 4,
+        height: _isExpanded ? gDefaultMargin * 16 : gDefaultMargin * 4,
         decoration: _isExpanded
             ? ShapeDecoration(
                 color: Colors.white,
@@ -264,26 +251,33 @@ class _ModuleTileState extends State<ModuleTile> {
                   radius: gDefaultTextMargin,
                   backgroundColor: lLightOrangeColor,
                   child: Icon(
-                    moduleTypeDict[widget.moduleType]!.last as IconData,
+                    moduleTypeDict[module.moduleType]!.last as IconData,
                     color: gThemeOrangeColor2,
                   ),
                 ),
                 SizedBox(width: lDefaultMargin / 2),
-                Padding(
-                  padding: EdgeInsets.only(top: gDefaultMargin / 2),
-                  child: Text(
-                    '${widget.index + 1}'.padLeft(2, '0') +
-                        '. ' +
-                        '${widget.moduleType}'.split('.')[1] +
-                        ' Module',
-                    style: lModuleTitleTextStyle,
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                        top: gDefaultMargin / 2, right: gDefaultMargin / 2),
+                    child: Text(
+                      '${widget.index + 1}'.padLeft(2, '0') +
+                          '. ' +
+                          module.title,
+                      maxLines: _isExpanded ? 2 : 1,
+                      textAlign: TextAlign.left,
+                      overflow: _isExpanded
+                          ? TextOverflow.visible
+                          : TextOverflow.ellipsis,
+                      // softWrap: _isExpanded ? true : false,
+                      style: lModuleTitleTextStyle,
+                    ),
                   ),
                 ),
-                Spacer(),
                 Padding(
                   padding: EdgeInsets.only(top: gDefaultMargin / 2),
                   child: Text(
-                    widget.date,
+                    module.formattedDate,
                     style: lModuleTitleTextStyle.copyWith(
                         color: gSubTitleTextColor),
                   ),
@@ -307,26 +301,26 @@ class _ModuleTileState extends State<ModuleTile> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: gDefaultMargin / 2),
+                  // SizedBox(height: gDefaultMargin / 4),
                   Padding(
-                    padding: EdgeInsets.only(left: gDefaultMargin / 4),
+                    padding: EdgeInsets.only(left: gDefaultMargin / 4, top: 0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: EdgeInsets.only(top: gDefaultMargin),
                           child: Text(
-                            moduleTypeDict[widget.moduleType]!.first,
+                            moduleTypeDict[module.moduleType]!.first,
                             style: gSubHeadingTextStyle.copyWith(
                               fontSize: 11 * gScaleFactor,
                               color: gThemeOrangeColor2,
                             ),
                           ),
                         ),
-                        Spacer(),
                         Chip(
-                          label: Text('00/40'),
+                          label: Text(
+                              '${module.userScore.toInt()}/${module.maxScorable.toInt()}'),
                           backgroundColor: lLightOrangeColor,
                           labelStyle: gSubHeadingTextStyle.copyWith(
                             fontSize: 12 * gScaleFactor,
@@ -336,29 +330,36 @@ class _ModuleTileState extends State<ModuleTile> {
                       ],
                     ),
                   ),
-                  SizedBox(height: gDefaultMargin / 4),
-                  Padding(
+                  // SizedBox(height: gDefaultMargin / 4),
+                  Container(
+                    // color: gSpiceRed,
+                    width: double.infinity,
+                    constraints: BoxConstraints(
+                      maxHeight: gDefaultMargin * 6,
+                      minHeight: gDefaultMargin * 5,
+                    ),
                     padding: EdgeInsets.only(left: gDefaultMargin / 4),
                     child: Text(
-                      widget.description,
+                      module.description!,
+                      // module.description! +
+                      //     'this is an auxilliary text I have added to check overflows and sizing bugs. what happens when I add even more of these texts.',
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
                       style: lModuleDescriptionTextStyle,
                     ),
                   ),
-                  SizedBox(height: gDefaultMargin / 4),
                   Align(
-                    alignment: Alignment.centerRight,
+                    alignment: Alignment.bottomRight,
                     child: MaterialButton(
                       elevation: 0,
                       color: gThemeOrangeColor2,
                       shape: ContinuousRectangleBorder(
                           borderRadius: BorderRadius.circular(gDefaultMargin)),
                       onPressed: () => onModuleBeginPressed(
-                        context,
-                        widget.index + 1,
-                        widget.moduleType,
-                        widget.orientation,
+                        module.id,
+                        module.moduleType,
+                        module.orientation,
+                        module.moduleUrl,
                       ),
                       child: Text(
                         'Begin',
@@ -370,6 +371,7 @@ class _ModuleTileState extends State<ModuleTile> {
                       ),
                     ),
                   ),
+                  // SizedBox(height: gDefaultMargin / 2),
                 ],
               ),
           ],
@@ -380,10 +382,10 @@ class _ModuleTileState extends State<ModuleTile> {
 }
 
 void onModuleBeginPressed(
-  BuildContext context,
-  int moduleId,
+  String moduleId,
   ModuleType moduleType,
   Orientation orientation,
+  String moduleUrl,
 ) {
   String _moduleDefinedRoute() {
     switch (moduleType) {
@@ -403,8 +405,14 @@ void onModuleBeginPressed(
 
   print('working $orientation, $moduleId, $moduleType');
 
-  Navigator.of(context).pushNamed(_moduleDefinedRoute(), arguments: {
+  // Navigator.of(context).pushNamed(_moduleDefinedRoute(), arguments: {
+  //   'moduleId': moduleId,
+  //   'orientation': orientation,
+  // });
+
+  Get.toNamed(_moduleDefinedRoute(), arguments: {
     'moduleId': moduleId,
     'orientation': orientation,
+    'moduleUrl': moduleUrl,
   });
 }

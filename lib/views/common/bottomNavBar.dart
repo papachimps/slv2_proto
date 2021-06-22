@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '/views/common/routeTransition.dart';
+import 'package:get/get.dart';
+// import '/views/common/routeTransition.dart';
 
 import 'constants.dart';
 
@@ -81,7 +82,8 @@ class BottomNavBar extends StatelessWidget {
           borderRadius: BorderRadius.circular(gDefaultTextMargin)),
       splashColor: gThemeOrangeColor.withOpacity(0.1),
       onPressed: () =>
-          Navigator.of(context).pushNamedIfNotCurrent(screenRouteName),
+          // Navigator.of(context).pushNamedIfNotCurrent(screenRouteName),
+          Get.toNamed(screenRouteName, preventDuplicates: true),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

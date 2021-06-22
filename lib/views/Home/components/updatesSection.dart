@@ -130,7 +130,7 @@ class UpdatesItem extends StatelessWidget {
           cacheKey: baseImageUrl,
           imageUrl: baseImageUrl,
           placeholder: (context, url) => Center(
-              child: CircularProgressIndicator(color: gThemeOrangeColor)),
+              child: CircularProgressIndicator(color: gThemeOrangeColor, strokeWidth: 1,)),
           imageBuilder: (context, imageProvider) => DecoratedBox(
             decoration: ShapeDecoration(
               shape: ContinuousRectangleBorder(

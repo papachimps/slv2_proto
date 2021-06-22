@@ -7,7 +7,7 @@ import 'components/myCoursesAppBar.dart';
 import 'components/statusWiseCourseTabView.dart';
 
 class MyCoursesScreen extends StatelessWidget {
-  static const String route = 'mycourses';
+  static const String route = '/mycourses';
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(

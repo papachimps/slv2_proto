@@ -1,0 +1,255 @@
+[
+    {
+        "id": "Empathy - CE",
+        "title": "Empathy - CE",
+        "description": "This module describes what empathy is and how it can aid your personal & professional growth.",
+        "categoryId": "Communication",
+        "department": "CE",
+        "lastUpdatedAt": "2020-01-17 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+
+    },
+    {
+        "id": "Beat the Heat: Cool Summer Tips - CE",
+        "title": "Beat the Heat: Cool Summer Tips - CE",
+        "description": "Simple DIY tips to stay cool and healthy in this summer heat.",
+        "categoryId": "Wellness",
+        "department": "CE",
+        "lastUpdatedAt": "2020-02-16 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1"
+    },
+    {
+        "id": "Preposition of Time: Episode I",
+        "title": "Preposition of Time: Episode I",
+        "categoryId": "Communication",
+        "department": "INF",
+        "lastUpdatedAt": "2020-03-15 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Portrait"
+    },
+    {
+        "id": "Beat the Heat - Cool Summer Tips",
+        "title": "Beat the Heat - Cool Summer Tips",
+        "description": "Simple DIY tips to stay cool and healthy in this summer heat.",
+        "categoryId": "Wellness",
+        "department": "INF",
+        "lastUpdatedAt": "2020-04-14 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Empathy",
+        "title": "Empathy",
+        "description": "This module describes what empathy is and how it can aid your personal & professional growth.",
+        "categoryId": "Communication",
+        "department": "INF",
+        "lastUpdatedAt": "2020-05-14 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Pre-Flight Briefing Checklist - May, 2021",
+        "title": "Pre-Flight Briefing Checklist - May, 2021",
+        "description": "May, 2021.",
+        "categoryId": "Safety & Emergency",
+        "department": "INF",
+        "lastUpdatedAt": "2020-06-13 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Grooming Recurrent Training",
+        "title": "Grooming Recurrent Training",
+        "description": "Lets understand the revised grooming guidelines which we need to follow in these times.",
+        "categoryId": "Grooming",
+        "department": "INF",
+        "lastUpdatedAt": "2020-07-12 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Meal and Pre-booking Timings",
+        "title": "Meal and Pre-booking Timings",
+        "description": "Let's look at the meals to offer round the clock and their pre-booking timings.",
+        "categoryId": "Customer Service",
+        "department": "INF",
+        "lastUpdatedAt": "2020-08-11 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Idioms of weather",
+        "title": "Idioms of weather",
+        "description": "Quick assessment on Idioms & Proverbs based on weather.",
+        "categoryId": "Communication",
+        "department": "INF",
+        "lastUpdatedAt": "2020-09-10 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Pre-Flight Briefing Checklist - April, 2021 | Archived",
+        "title": "Pre-Flight Briefing Checklist - April, 2021 | Archived",
+        "description": "April, 2021.",
+        "categoryId": "Safety & Emergency",
+        "department": "INF",
+        "lastUpdatedAt": "2020-10-09 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Say It Right! | Archived",
+        "title": "Say It Right! | Archived",
+        "description": "This module let's us familiarise ourselves with phrases which are spoken quite often, but should be avoided.",
+        "categoryId": "Communication",
+        "department": "INF",
+        "lastUpdatedAt": "2020-11-08 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Wellness at work | Archived",
+        "title": "Wellness at work | Archived",
+        "description": "Quick tips & tricks on how to maintain a healthy lifestyle at work.",
+        "categoryId": "Wellness",
+        "department": "INF",
+        "lastUpdatedAt": "2020-12-07 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Case Study - Cabin Safety, March 2021 | Archived",
+        "title": "Case Study - Cabin Safety, March 2021 | Archived",
+        "description": "Case Study, March 2021.",
+        "categoryId": "Safety & Emergency",
+        "department": "INF",
+        "lastUpdatedAt": "2020-01-06 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Portrait"
+    },
+    {
+        "id": "Pre-Flight Briefing Checklist - March'2021 | Archived",
+        "title": "Pre-Flight Briefing Checklist - March'2021 | Archived",
+        "description": "March, 2021.",
+        "categoryId": "Safety & Emergency",
+        "department": "INF",
+        "lastUpdatedAt": "2020-02-05 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Republic Day Greetings | Archived",
+        "title": "Republic Day Greetings | Archived",
+        "description": "This module is to introduce you to the ways in which you can greet customers on Republic Day.",
+        "categoryId": "Communication",
+        "department": "INF",
+        "lastUpdatedAt": "2020-03-04 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Deep Breathing | Archived",
+        "title": "Deep Breathing | Archived",
+        "description": "Video module on Deep Breathing, its benefits and practice.",
+        "categoryId": "Wellness",
+        "department": "INF",
+        "lastUpdatedAt": "2020-04-03 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Meditation - Mindfulness | Archived",
+        "title": "Meditation - Mindfulness | Archived",
+        "description": "A module on Mindful-Meditation.",
+        "categoryId": "Wellness",
+        "department": "INF",
+        "lastUpdatedAt": "2020-05-02 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Safety Enroute - MARCH, 2021 | Archived",
+        "title": "Safety Enroute - MARCH, 2021 | Archived",
+        "description": "March's edition of Safety Enroute - SpiceJet Safety Journal.",
+        "categoryId": "Safety & Emergency",
+        "department": "INF",
+        "lastUpdatedAt": "2020-06-01 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Portrait"
+    },
+    {
+        "id": "Don't Quit...Keep Going | Archived",
+        "title": "Don't Quit...Keep Going | Archived",
+        "description": "If You Are Going Through a Tough Time - LISTEN TO THIS!",
+        "categoryId": "Self Development",
+        "department": "INF",
+        "lastUpdatedAt": "2020-01-21 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Fall Forward to Succeed | Archived",
+        "title": "Fall Forward to Succeed | Archived",
+        "categoryId": "Self Development",
+        "department": "INF",
+        "lastUpdatedAt": "2020-01-21 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "Say NO to painkillers | Archived",
+        "title": "Say NO to painkillers | Archived",
+        "description": "In this module, let's learn different asanas of yoga to achieve a pain free body without any side effect or harm.",
+        "categoryId": "Wellness",
+        "department": "INF",
+        "lastUpdatedAt": "2020-01-21 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    },
+    {
+        "id": "The Power of Vision | Archived",
+        "title": "The Power of Vision | Archived",
+        "description": "Arnold Schwarzenegger | One of the Best Motivational Speeches Ever",
+        "categoryId": "Self Development",
+        "department": "INF",
+        "lastUpdatedAt": "2020-01-21 00:00:00.000",
+        "imgUrl": "https://picsum.photos/600/400?random=1",
+        "orientation": "Landscape"
+    }
+]
+
+[
+    {
+    "id": "m1",
+    "title": "Module 1",
+    "description": "Module1 Description",
+    "lastUpdatedAt": "2020-01-17 00:00:00.000",
+    "orientation": "Landscape",
+    "courseId" : "Empathy - CE",
+    "moduleType": "Web",
+    "completionStatus": "Pending",
+    "maxScorable": 10
+},
+{
+    "id": "m2",
+    "title": "Module 2",
+    "description": "Module2 Description",
+    "lastUpdatedAt": "2020-11-17 00:00:00.000",
+    "orientation": "Portrait",
+    "courseId" : "Empathy - CE",
+    "moduleType": "Doc",
+    "completionStatus": "Pending",
+    "maxScorable": 20
+},
+{
+    "id": "m3",
+    "title": "Module 3",
+    "description": "Module3 Description",
+    "lastUpdatedAt": "2020-05-17 00:00:00.000",
+    "orientation": "Portrait",
+    "courseId" : "Empathy - CE",
+    "moduleType": "Doc",
+    "completionStatus": "Pending",
+    "maxScorable": 15
+}
+]

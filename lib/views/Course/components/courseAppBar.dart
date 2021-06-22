@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/blurAppBar.dart';
@@ -18,7 +19,8 @@ BlurAppBar courseAppBar(BuildContext context, String categoryName) {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         GestureDetector(
-          onTap: () => Navigator.of(context).pop(),
+          // onTap: () => Navigator.of(context).pop(),
+          onTap: () => Get.back(),
           child: Icon(
             Icons.arrow_back_ios_new_rounded,
             color: gHeadingTextColor,

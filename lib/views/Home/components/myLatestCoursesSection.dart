@@ -1,5 +1,10 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+
+// import '/controllers/course_controller.dart';
+import '/controllers/filter_controller.dart';
 
 import '/views/common/constants.dart';
 import '/views/Course/courseScreen.dart';
@@ -7,59 +12,73 @@ import '/views/Course/courseScreen.dart';
 import '../localConstants.dart';
 
 class MyLatestCoursesSection extends StatelessWidget {
+  final _filterController = Get.put(FilterController());
   @override
   Widget build(BuildContext context) {
     return Container(
       height: (250 + 16) * gScaleFactor,
       width: double.infinity,
-      child: ListView.builder(
-        physics: BouncingScrollPhysics(),
-          scrollDirection: Axis.horizontal,
-          padding: EdgeInsets.symmetric(horizontal: gDefaultMargin / 2),
-          // padding: ,
-          itemCount: 6,
-          itemBuilder: (ctx, index) {
-            return MyLatestCoursesItem(
-              cardWidth: 180 * gScaleFactor,
-              courseImageUrl: getImageUrl(index + 6),
-              cardIndex: index,
-              onPressed: () {
-                print('course card no. : $index pressed!');
-                // ignore: todo
-                //TODO: on pressing update tile
-                Navigator.of(context).pushNamed(CourseScreen.route);
-              },
-            );
-          }),
+      child: Obx(() {
+        if (_filterController.coursesController.isLoading.isTrue)
+          return Center(
+              child: CircularProgressIndicator(
+                  color: gThemeOrangeColor, strokeWidth: 1));
+        else {
+          _filterController.coursesSortedByRecent(
+              _filterController.coursesController.courses);
+          var recentFiveCourses = _filterController.filteredCourses;
+          return ListView.builder(
+              physics: BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              padding: EdgeInsets.symmetric(horizontal: gDefaultMargin / 2),
+              itemCount: min(5, recentFiveCourses.length),
+              itemBuilder: (ctx, index) {
+                var course = recentFiveCourses[index];
+                return MyLatestCoursesItem(
+                  cardWidth: 180 * gScaleFactor,
+                  cardId: course.id,
+                  courseImageUrl: course.imgUrl,
+                  courseTitle: course.title,
+                  courseCategory: course.categoryId,
+                  courseDate: course.formattedDate.split(',').first,
+                  onPressed: () {
+                    print('course card no. : $index pressed!');
+                    // ignore: todo
+                    //TODO: on pressing update tile
+                    // Navigator.of(context).pushNamed(CourseScreen.route);
+                    Get.toNamed(CourseScreen.route, arguments: course);
+                  },
+                );
+              });
+        }
+      }),
     );
   }
 }
 
 class MyLatestCoursesItem extends StatelessWidget {
-  final int cardIndex;
+  final String cardId;
   final double? cardWidth;
   final String courseImageUrl;
-  // final String? heroImageTag;
-  // final List<Course> courseList;
   final String courseDate;
   final String courseTitle;
   final String courseCategory;
   final VoidCallback? onPressed;
 
   const MyLatestCoursesItem({
-    required this.cardIndex,
-    this.cardWidth,
+    required this.cardId,
     required this.courseImageUrl,
-    this.courseDate = '28 Nov',
-    this.courseTitle = 'Contouring and highlighting',
-    this.courseCategory = 'Grooming',
+    required this.courseDate,
+    required this.courseTitle,
+    required this.courseCategory,
+    this.cardWidth,
     this.onPressed,
     // this.heroImageTag,
   });
   @override
   Widget build(BuildContext context) {
     return Container(
-      key: Key(cardIndex.toString()),
+      key: Key(cardId),
       margin: EdgeInsets.symmetric(horizontal: gDefaultMargin / 2),
       padding: EdgeInsets.only(bottom: gDefaultMargin / 2, top: 2),
       width: cardWidth,
@@ -89,7 +108,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                     ),
                     child: Center(
                       child:
-                          CircularProgressIndicator(color: gThemeOrangeColor),
+                          CircularProgressIndicator(color: gThemeOrangeColor ,strokeWidth: 1,),
                     )),
                 imageBuilder: (context, imageProvider) => DecoratedBox(
                   decoration: ShapeDecoration(
@@ -131,6 +150,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                     bottom: gDefaultMargin,
                   ),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -146,6 +166,7 @@ class MyLatestCoursesItem extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                       ),
                       SizedBox(height: gDefaultMargin / 2),
+                      Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [

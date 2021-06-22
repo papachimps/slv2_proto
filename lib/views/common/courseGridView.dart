@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:slv2/views/Course/courseScreen.dart';
 
 import 'constants.dart';
@@ -30,7 +31,8 @@ class CourseGridView extends StatelessWidget {
           courseImageUrl: getImageUrl(index),
           onPressed: () {
             print('course no. $index pressed');
-            Navigator.of(context).pushNamed(CourseScreen.route);
+            // Navigator.of(context).pushNamed(CourseScreen.route);
+            Get.toNamed(CourseScreen.route);
           },
           onLongPress: () {
             print('long pressed course no. $index');

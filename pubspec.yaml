@@ -13,6 +13,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   
+  #intl for datetime format
+  intl: ^0.17.0
   # state management package
   get: ^4.1.4
   

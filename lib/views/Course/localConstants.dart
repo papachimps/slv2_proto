@@ -37,12 +37,3 @@ TextStyle lModuleDescriptionTextStyle = GoogleFonts.poppins(
   fontWeight: FontWeight.w400,
   height: 1.65 * gScaleFactor,
 );
-
-enum ModuleType { Video, Web, Interactive, Doc }
-
-Map<ModuleType, List<dynamic>> moduleTypeDict = {
-  ModuleType.Doc: ['Document', Icons.library_books_outlined],
-  ModuleType.Video: ['Video Module', Icons.theaters_rounded],
-  ModuleType.Interactive: ['Interactive Module', Icons.note_alt_outlined],
-  ModuleType.Web: ['Web Resource', Icons.web_rounded],
-};

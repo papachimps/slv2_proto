@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
 import '/views/common/constants.dart';
@@ -62,7 +63,8 @@ Alert showLogOutAlertDialog({
           title: "Cancel",
           titleColor: lDialogButtonTitleColor,
           onPressed: () {
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Get.back();
           }),
     ],
   );

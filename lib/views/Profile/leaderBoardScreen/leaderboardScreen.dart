@@ -9,7 +9,7 @@ import 'leaderBoardListTile.dart';
 import 'leaderboardAppBar.dart';
 
 class DepartmentLeaderboardScreen extends StatelessWidget {
-  static const String route = 'dept-leaderboard';
+  static const String route = '/dept-leaderboard';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

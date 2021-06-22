@@ -8,7 +8,7 @@ import 'localConstants.dart';
 import 'components/bookmarksAppBar.dart';
 
 class BookmarksScreen extends StatelessWidget {
-  static const String route = 'bookmarks';
+  static const String route = '/bookmarks';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

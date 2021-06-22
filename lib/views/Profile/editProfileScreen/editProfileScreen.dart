@@ -7,7 +7,7 @@ import 'editAlertDialog.dart';
 import 'editProfileAppBar.dart';
 
 class EditProfileScreen extends StatelessWidget {
-  static const String route = 'edit-profile';
+  static const String route = '/edit-profile';
   @override
   Widget build(BuildContext context) {
     return Scaffold(

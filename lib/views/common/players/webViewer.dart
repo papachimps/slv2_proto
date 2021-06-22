@@ -4,29 +4,39 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:get/get.dart';
 
 import '../constants.dart';
 // import 'package:webview_flutter/webview_flutter.dart';
 
-String webURL = [
-  "https://bubblegame-inflight-234if.web.app",
-  "https://spicemilestones.web.app/ccso_desk_ce.html",
-  "https://spicemilestones.web.app/session2021-22-inf.html",
-  'https://spicemilestones.firebaseapp.com/cmd_desk_may2021.html',
-  "https://spicemilestones.web.app/spicefeed-inf.html",
-].first;
+// String webURL = [
+//   "https://bubblegame-inflight-234if.web.app",
+//   "https://spicemilestones.web.app/ccso_desk_ce.html",
+//   "https://spicemilestones.web.app/session2021-22-inf.html",
+//   'https://spicemilestones.firebaseapp.com/cmd_desk_may2021.html',
+//   "https://spicemilestones.web.app/spicefeed-inf.html",
+// ].first;
 
 class WebViewer extends StatefulWidget {
-  static const String route = 'webview';
+  static const String route = '/webview';
   @override
   WebViewerState createState() => WebViewerState();
 }
 
 class WebViewerState extends State<WebViewer> {
+  late String moduleId;
+  late Orientation orientation;
+  late String moduleUrl;
   @override
   void initState() {
-    super.initState();
+    Map<String, dynamic> arguments = Get.arguments;
+    //moduleId = arguments['moduleId'];
+    moduleUrl = arguments['moduleUrl'];
+    orientation = arguments['orientation'];
+    print(orientation);
+    SystemChrome.setPreferredOrientations(handleOrientation(orientation));
     SystemChrome.setEnabledSystemUIOverlays([]);
+    super.initState();
     // // Enable hybrid composition.
     // if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
   }
@@ -43,23 +53,20 @@ class WebViewerState extends State<WebViewer> {
 
   @override
   Widget build(BuildContext context) {
-    Map<String, dynamic> arguments =
-        ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
-    // int moduleId = arguments['moduleId'];
-    Orientation orientation = arguments['orientation'];
-    SystemChrome.setPreferredOrientations(handleOrientation(orientation));
     return Scaffold(
       body: Stack(
         children: [
           InAppWebView(
-            initialUrlRequest: URLRequest(url: Uri.parse(webURL)),
+            initialUrlRequest: URLRequest(url: Uri.parse(moduleUrl)),
           ),
           Positioned(
             top: 10,
             right: 0,
             child: MaterialButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                // Navigator.of(context).pop();
+                // Get.delete();
+                Get.back();
               },
               padding: EdgeInsets.zero,
               shape: CircleBorder(

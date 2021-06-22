@@ -22,4 +22,6 @@ class Activity {
     this.mainUrl,
     this.orientation = Orientation.portrait,
   });
+
+  
 }

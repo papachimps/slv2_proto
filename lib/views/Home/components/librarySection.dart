@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:get/get.dart';
 import 'package:slv2/views/Category/categoryScreen.dart';
-import '/views/common/routeTransition.dart';
+// import '/views/common/routeTransition.dart';
 
 import '/views/common/constants.dart';
 import '../localConstants.dart';
@@ -28,7 +29,8 @@ class LibrarySection extends StatelessWidget {
               cardIndex: index,
               onPressed: () {
                 print('library card no. : $index pressed!');
-                Navigator.of(context).pushNamedIfNotCurrent(CategoryScreen.route);
+                // Navigator.of(context).pushNamedIfNotCurrent(CategoryScreen.route);
+                Get.toNamed(CategoryScreen.route);
               },
             );
           }),
@@ -74,7 +76,7 @@ class LibraryItem extends StatelessWidget {
           height: 130 * gScaleFactor,
           imageUrl: baseImageUrl,
           placeholder: (context, url) =>
-              Center(child: CircularProgressIndicator(color: gThemeOrangeColor)),
+              Center(child: CircularProgressIndicator(color: gThemeOrangeColor, strokeWidth: 1,)),
           imageBuilder: (context, imageProvider) => DecoratedBox(
             decoration: ShapeDecoration(
               shape: ContinuousRectangleBorder(

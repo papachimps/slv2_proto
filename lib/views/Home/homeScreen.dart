@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '/controllers/filter_controller.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/bottomNavBar.dart';
@@ -10,7 +13,9 @@ import 'components/myLatestCoursesSection.dart';
 import 'components/updatesSection.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String route = 'home';
+  static const String route = '/home';
+  // final coursesController = Get.put(CoursesController());
+  final filterController = Get.put(FilterController());
   @override
   Widget build(BuildContext context) {
     // set [gScaleFactor] to (screen width) / (design width)
