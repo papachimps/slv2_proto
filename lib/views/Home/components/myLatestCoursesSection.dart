@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 
-// import '/controllers/course_controller.dart';
-import '/controllers/filter_controller.dart';
+import '/controllers/course_controller.dart';
+// import '/controllers/filter_controller.dart';
 
 import '/views/common/constants.dart';
 import '/views/Course/courseScreen.dart';
@@ -12,21 +12,20 @@ import '/views/Course/courseScreen.dart';
 import '../localConstants.dart';
 
 class MyLatestCoursesSection extends StatelessWidget {
-  final _filterController = Get.put(FilterController());
+  final _filterController = Get.find<CoursesController>();
   @override
   Widget build(BuildContext context) {
+    print('built MyLatestCoursesSection');
     return Container(
       height: (250 + 16) * gScaleFactor,
       width: double.infinity,
       child: Obx(() {
-        if (_filterController.coursesController.isLoading.isTrue)
+        if (_filterController.isLoading.isTrue)
           return Center(
               child: CircularProgressIndicator(
                   color: gThemeOrangeColor, strokeWidth: 1));
         else {
-          _filterController.coursesSortedByRecent(
-              _filterController.coursesController.courses);
-          var recentFiveCourses = _filterController.filteredCourses;
+          var recentFiveCourses = _filterController.courses;
           return ListView.builder(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
@@ -107,8 +106,10 @@ class MyLatestCoursesItem extends StatelessWidget {
                       )),
                     ),
                     child: Center(
-                      child:
-                          CircularProgressIndicator(color: gThemeOrangeColor ,strokeWidth: 1,),
+                      child: CircularProgressIndicator(
+                        color: gThemeOrangeColor,
+                        strokeWidth: 1,
+                      ),
                     )),
                 imageBuilder: (context, imageProvider) => DecoratedBox(
                   decoration: ShapeDecoration(
@@ -174,10 +175,12 @@ class MyLatestCoursesItem extends StatelessWidget {
                               path: gCategoryIcon,
                               color: gInactiveNavIconColor),
                           SizedBox(width: gDefaultMargin / 4),
-                          Text(
-                            courseCategory,
-                            style: gSubTitleTextStyle,
-                            overflow: TextOverflow.ellipsis,
+                          Expanded(
+                            child: Text(
+                              courseCategory,
+                              style: gSubTitleTextStyle,
+                              overflow: TextOverflow.ellipsis,
+                            ),
                           ),
                         ],
                       ),

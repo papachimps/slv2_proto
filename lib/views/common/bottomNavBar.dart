@@ -83,7 +83,8 @@ class BottomNavBar extends StatelessWidget {
       splashColor: gThemeOrangeColor.withOpacity(0.1),
       onPressed: () =>
           // Navigator.of(context).pushNamedIfNotCurrent(screenRouteName),
-          Get.toNamed(screenRouteName, preventDuplicates: true),
+          Get.offNamedUntil(
+              screenRouteName, ModalRoute.withName(HomeScreen.route)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

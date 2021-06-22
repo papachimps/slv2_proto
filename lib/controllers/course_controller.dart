@@ -30,9 +30,15 @@ class CoursesController extends GetxController {
     final jsonResponse = await networkService.getData();
     final _coursesListMap = json.decode(jsonResponse);
     courses.addAll(courseListFromMap(_coursesListMap));
-    // courses.forEach((element) => print([element.title, element.lastUpdatedAt]));
+    coursesSortedByRecent();
+    courses.forEach((element) => print([element.title, element.lastUpdatedAt]));
     isLoading.toggle();
   }
+
+// get courses list sorted by their DateTime.
+  void coursesSortedByRecent() =>
+      courses.sort((a, b) => (b.lastUpdatedAt).compareTo(a.lastUpdatedAt));
+  // _courses.forEach((element) => print([element.title, element.lastUpdatedAt]));
 
   Map courseListToMap(List<Course> courseList) {
     Map _courseMap = new Map();

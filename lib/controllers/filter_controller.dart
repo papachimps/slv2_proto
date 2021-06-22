@@ -1,14 +1,14 @@
 import '/models/course.dart';
 import 'package:get/get.dart';
 
-import 'course_controller.dart';
+// import 'course_controller.dart';
 
 class FilterController extends GetxController {
-  final coursesController = Get.put(CoursesController());
-  List<Course> filteredCourses = <Course>[].obs;
+  // final coursesController = Get.put(CoursesController());
+  List<Course> filteredCourses = <Course>[];
 
 //get all courses
-  List<Course> get allCourses => coursesController.courses;
+  // List<Course> get allCourses => coursesController.courses;
 
 // get bookmarkedCourses
   List<Course> bookmarkedCourses(List<Course> courses) {
