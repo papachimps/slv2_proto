@@ -10,18 +10,9 @@ import '../localConstants.dart';
 
 import 'categoriesListView.dart';
 
-BlurAppBar searchAppBar(BuildContext context) {
-  int activeCategoryIndex = 3;
-  List categoriesList = [
-    'All',
-    'Wellness',
-    'Grooming',
-    'Product & Policy',
-    'Customer Service',
-    'Self Development',
-    'Communication',
-    'Safety & Emergency',
-  ];
+BlurAppBar searchAppBar(
+  BuildContext context,
+) {
   return BlurAppBar(
     padding: EdgeInsets.only(
       top: gDefaultMargin * 3,
@@ -71,8 +62,8 @@ BlurAppBar searchAppBar(BuildContext context) {
         SizedBox(
           height: lDefaultMargin * 3,
           child: CategoriesListView(
-            categoryChips: categoriesList,
-            activeCategoryIndex: activeCategoryIndex,
+            // categoriesMap: categoriesCountMap,
+            // onPressed: () {},
           ),
         ),
       ],

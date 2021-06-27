@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '/models/course.dart';
+
 import '/views/common/constants.dart';
 import '/views/common/filtersBottomSheet.dart';
 import '/views/common/searchAndFilterBlock.dart';
@@ -8,11 +10,10 @@ import '/views/common/courseGridView.dart';
 import '../localConstants.dart';
 
 class CategoryCoursesListing extends StatelessWidget {
-  const CategoryCoursesListing({
-    required this.coursesCount,
+  final List<Course> courses;
+  CategoryCoursesListing({
+    required this.courses,
   });
-
-  final int coursesCount;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +45,6 @@ class CategoryCoursesListing extends StatelessWidget {
           ),
         ),
         SliverList(
-          
           delegate: SliverChildListDelegate(
             [
               Padding(
@@ -52,11 +52,11 @@ class CategoryCoursesListing extends StatelessWidget {
                   left: gDefaultTextMargin,
                   top: lDefaultMargin,
                 ),
-                child:
-                    Text('$coursesCount Courses', style: gCourseCountTextStyle),
+                child: Text('${courses.length} Courses',
+                    style: gCourseCountTextStyle),
               ),
               SizedBox(height: gDefaultMargin),
-              CourseGridView(coursesCount: coursesCount),
+              CourseGridView(courses: courses),
               SizedBox(height: gAppBarHeight + gDefaultMargin * 2),
             ],
           ),

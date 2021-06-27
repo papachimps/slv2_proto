@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:slv2/models/course.dart';
 
 import '/views/common/constants.dart';
 import '/views/common/courseGridView.dart';
@@ -6,9 +7,9 @@ import '/views/common/courseGridView.dart';
 import '../localConstants.dart';
 
 class StatusWiseCourseTabView extends StatelessWidget {
-  final int coursesCount;
+  final List<Course> courses;
 
-  const StatusWiseCourseTabView({this.coursesCount = 11});
+  const StatusWiseCourseTabView({required this.courses});
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class StatusWiseCourseTabView extends StatelessWidget {
             top: lDefaultMargin,
           ),
           child:
-              Text('$coursesCount Courses', style: gCourseCountTextStyle),
+              Text('${courses.length} Courses', style: gCourseCountTextStyle),
         ),
         SizedBox(height: gDefaultMargin),
-        CourseGridView(coursesCount: coursesCount),
+        if (courses.isNotEmpty) CourseGridView(courses: courses),
         SizedBox(height: gAppBarHeight + gDefaultMargin * 2),
       ],
     );

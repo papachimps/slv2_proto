@@ -1,29 +1,23 @@
 //settings options tile component
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '/views/common/constants.dart';
+import '/views/common/players/webViewer.dart';
+
 import '../localConstants.dart';
 
 /// Use [onSettingTilePressed] method for opening the webView for respective tile
 /// Update return type accordingly.
 void onSettingTilePressed(BuildContext context, String routeURL) {
-  Navigator.of(context).push(
-    MaterialPageRoute(
-      // builder: (BuildContext context) => WebviewforSettings(getURL(3), 1),
-      builder: (BuildContext context) => routeURL == 'Default'
-          //Replace this Scaffold with Feedback Page
-          ? Scaffold(
-              appBar: AppBar(),
-              body: Center(child: Text('Special route for Feedback')),
-            )
-          // Replace this Scaffold with webview
-          : Scaffold(
-              appBar: AppBar(),
-              body: Center(child: Text(routeURL)),
-            ),
-    ),
-  );
+  routeURL != 'Feedback'
+      ? Get.toNamed(WebViewer.route, arguments: {
+          'moduleId': '',
+          'orientation': Orientation.portrait,
+          'moduleUrl': routeURL,
+        })
+      : Get.to(Scaffold(body: Center(child: Text('Feedback'))));
 }
 
 class SettingsTile extends StatefulWidget {
@@ -53,7 +47,7 @@ class _SettingsTileState extends State<SettingsTile> {
           : () {
               print('${widget.title} pressed!');
               onSettingTilePressed(
-                  context, lRoutesURLMap[widget.title] ?? 'Default');
+                  context, lRoutesURLMap[widget.title] ?? 'Feedback');
             },
       child: Container(
         height: gBaseMultiplier * 8,

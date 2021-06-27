@@ -4,7 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'constants.dart';
 
 class CourseCard extends StatelessWidget {
-  final int cardIndex;
+  // final int cardIndex;
   final double? cardWidth;
   final String courseImageUrl;
   // final String? heroImageTag;
@@ -16,7 +16,7 @@ class CourseCard extends StatelessWidget {
   final VoidCallback? onLongPress;
 
   const CourseCard({
-    required this.cardIndex,
+    // required this.cardIndex,
     this.cardWidth,
     required this.courseImageUrl,
     this.courseDate = '28 Nov',

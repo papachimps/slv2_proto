@@ -18,26 +18,17 @@ import 'components/courseAppBar.dart';
 
 class CourseScreen extends StatelessWidget {
   static const String route = '/course';
-  // final String courseTitle;
-  // final int modulesCount;
-  // final String courseCategoryName;
 
-  // const CourseScreen({
-  //   this.courseTitle = 'Pre-Flight Briefing Checklist',
-  //   this.modulesCount = 6,
-  //   this.courseCategoryName = 'Safety & Emergency Procedures',
-  // });
+  final Course course = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
-    final Course course = Get.arguments;
-    // SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
     return Scaffold(
       extendBody: true,
       extendBodyBehindAppBar: true,
       backgroundColor: gPrimaryWhiteBG,
       bottomNavigationBar: BottomNavBar(activeRoute: 'None'),
-      appBar: courseAppBar(context, course.categoryId),
+      appBar: courseAppBar(context, course: course),
       body: ListView(
         physics: BouncingScrollPhysics(),
         // shrinkWrap: true,
