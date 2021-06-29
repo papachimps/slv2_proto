@@ -1,0 +1,392 @@
+{
+  "courses" : {
+    "c1" : {
+      "courseCategory" : "Load And Trim",
+      "courseDuration" : 15,
+      "department" : [ "APS", "INF" ],
+      "description" : "This is a description of Load and Trim & Accidental Slide Deployment.",
+      "id" : "c1",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "modules" : [ "m1", "m6" ],
+      "name" : "Load and Trim & Accidental Slide Deployment",
+      "publishDate" : "2020-01-21 00:00:00.000"
+    },
+    "c2" : {
+      "courseCategory" : "Grooming",
+      "courseDuration" : 25,
+      "department" : [ "INF" ],
+      "description" : "This is a description of Grooming & Make Up course",
+      "id" : "c2",
+      "imgUrl" : "https://picsum.photos/600/400?random=3",
+      "modules" : [ "m2", "m9" ],
+      "name" : "Grooming & Make Up - INF",
+      "publishDate" : "2019-12-01 00:00:00.000"
+    },
+    "c3" : {
+      "courseCategory" : "Grooming",
+      "courseDuration" : 35,
+      "department" : [ "APS" ],
+      "description" : "This is a description of Grooming & Make Up course.",
+      "id" : "c3",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "modules" : [ "m3", "m9" ],
+      "name" : "Grooming & Make Up - APS",
+      "publishDate" : "2019-12-14 00:00:00.000"
+    },
+    "c4" : {
+      "courseCategory" : "Communication",
+      "courseDuration" : 30,
+      "department" : [ "INF" ],
+      "description" : "This is a description of Customer Responses & Announcements.",
+      "id" : "c4",
+      "imgUrl" : "https://picsum.photos/600/400?random=0",
+      "modules" : [ "m4", "m7" ],
+      "name" : "Customer Responses & Announcements -INF",
+      "publishDate" : "2019-11-12 00:00:00.000"
+    },
+    "c5" : {
+      "courseCategory" : "Customer Service",
+      "courseDuration" : 30,
+      "department" : [ "APS" ],
+      "description" : "This is a description of Customer Responses & Announcements.",
+      "id" : "c5",
+      "imgUrl" : "https://picsum.photos/600/400?random=0",
+      "modules" : [ "m5", "m8" ],
+      "name" : "Customer Responses & Announcements -APS",
+      "publishDate" : "2019-11-30 00:00:00.000"
+    },
+    "c6" : {
+      "courseCategory" : "Miscellaneous",
+      "courseDuration" : 30,
+      "department" : [ "INF", "INF" ],
+      "description" : "This is a description of Case Studies.",
+      "id" : "c6",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "modules" : [ "m10", "m11", "m12" ],
+      "name" : "Case Studies",
+      "publishDate" : "2019-10-10 00:00:00.000"
+    },
+    "c7" : {
+      "courseCategory" : "Miscellaneous",
+      "courseDuration" : 25,
+      "department" : [ "APS", "INF" ],
+      "description" : "This is a description of Daily Quizzes.",
+      "id" : "c7",
+      "imgUrl" : "https://picsum.photos/600/400?random=0",
+      "modules" : [ "m13", "m14", "m15" ],
+      "name" : "Daily Quizzes",
+      "publishDate" : "2019-11-12 00:00:00.000"
+    }
+  },
+  "instance-log" : {
+    "silent_review" : {
+      "-M0P2yJ3lXZbY32hsAr3" : {
+        "attemptDate" : "19/2/2020",
+        "attemptTime" : "2:19:16",
+        "sessionCompletionPercent" : 0.16,
+        "sessionScore" : 7,
+        "sessionTimeInSec" : 33.498,
+        "userId" : "shub123"
+      },
+      "-M0P384XA9PpK3V72gei" : {
+        "attemptDate" : "19/2/2020",
+        "attemptTime" : "2:20:00",
+        "sessionCompletionPercent" : 0.22,
+        "sessionScore" : 10,
+        "sessionTimeInSec" : 77.618,
+        "userId" : "shub123"
+      },
+      "-M0P4lgENUT_7OxeG2BJ" : {
+        "attemptDate" : "19/2/2020",
+        "attemptTime" : "2:27:08",
+        "sessionCompletionPercent" : 0.38,
+        "sessionScore" : 17,
+        "sessionTimeInSec" : 506.057,
+        "userId" : "shub123"
+      }
+    }
+  },
+  "modules" : {
+    "m1" : {
+      "consumptionType" : "Game",
+      "description" : "This is a description of Airplane Balance module.",
+      "duration" : 15,
+      "id" : "m1",
+      "imgUrl" : "https://picsum.photos/600/400?random=4",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : true,
+      "maxAttemptLimit" : 2,
+      "maxScore" : 200.0,
+      "name" : "Airplane Balance",
+      "passingPercentage" : 0.7,
+      "publishDate" : "2020-01-01 00:00:00.000"
+    },
+    "m10" : {
+      "consumptionType" : "Doc",
+      "description" : "This is a description of Case Study 1 module.",
+      "duration" : 5,
+      "id" : "m10",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Case Study 1",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-10 00:00:00.000"
+    },
+    "m11" : {
+      "consumptionType" : "Doc",
+      "description" : "This is a description of Case Study 2 module.",
+      "duration" : 10,
+      "id" : "m11",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Case Study 2",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-11 00:00:00.000"
+    },
+    "m12" : {
+      "consumptionType" : "Doc",
+      "description" : "This is a description of Case Study 3 module.",
+      "duration" : 12,
+      "id" : "m12",
+      "imgUrl" : "https://picsum.photos/600/400?random=4",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Case Study 3",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-12 00:00:00.000"
+    },
+    "m13" : {
+      "consumptionType" : "Quiz",
+      "description" : "This is a description of Daily Quiz 1 module.",
+      "duration" : 10,
+      "id" : "m13",
+      "imgUrl" : "https://picsum.photos/600/400?random=2",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Daily Quiz 1",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-13 00:00:00.000"
+    },
+    "m14" : {
+      "consumptionType" : "Quiz",
+      "description" : "This is a description of Daily Quiz 2 module.",
+      "duration" : 8,
+      "id" : "m14",
+      "imgUrl" : "https://picsum.photos/600/400?random=0",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Daily Quiz 2",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-14 00:00:00.000"
+    },
+    "m15" : {
+      "consumptionType" : "Quiz",
+      "description" : "This is a description of Daily Quiz 3 module.",
+      "duration" : 5,
+      "id" : "m15",
+      "imgUrl" : "https://picsum.photos/600/400?random=3",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Daily Quiz 3",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-15 00:00:00.000"
+    },
+    "m2" : {
+      "consumptionType" : "Game",
+      "description" : "This is a description of Spot the Error module.",
+      "duration" : 25,
+      "id" : "m2",
+      "imgUrl" : "https://picsum.photos/600/400?random=2",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : true,
+      "maxAttemptLimit" : 3,
+      "maxScore" : 300.0,
+      "name" : "Spot the Error - INF",
+      "passingPercentage" : 0.7,
+      "publishDate" : "2020-01-02 00:00:00.000"
+    },
+    "m3" : {
+      "consumptionType" : "Game",
+      "description" : "This is a description of Spot the Error module.",
+      "duration" : 35,
+      "id" : "m3",
+      "imgUrl" : "https://picsum.photos/600/400?random=2",
+      "isFavorite" : false,
+      "isLandScape" : false,
+      "isScorable" : true,
+      "maxAttemptLimit" : 3,
+      "maxScore" : 400.0,
+      "name" : "Spot the Error -APS",
+      "passingPercentage" : 0.7,
+      "publishDate" : "2020-01-03 00:00:00.000"
+    },
+    "m4" : {
+      "consumptionType" : "Quiz",
+      "description" : "This is a description of Customer Responses module.",
+      "duration" : 30,
+      "id" : "m4",
+      "imgUrl" : "https://picsum.photos/600/400?random=4",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : true,
+      "maxAttemptLimit" : 2,
+      "maxScore" : 300.0,
+      "name" : "Customer Responses -INF",
+      "passingPercentage" : 0.7,
+      "publishDate" : "2020-01-04 00:00:00.000"
+    },
+    "m5" : {
+      "consumptionType" : "Quiz",
+      "description" : "This is a description of Customer Responses module.",
+      "duration" : 30,
+      "id" : "m5",
+      "imgUrl" : "https://picsum.photos/600/400?random=2",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : true,
+      "maxAttemptLimit" : 2,
+      "maxScore" : 300.0,
+      "name" : "Customer Responses -APS",
+      "passingPercentage" : 0.7,
+      "publishDate" : "2020-01-05 00:00:00.000"
+    },
+    "m6" : {
+      "consumptionType" : "Video",
+      "description" : "This is a description of Accidental Slide Deployment module.",
+      "duration" : 30,
+      "id" : "m6",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Accidental Slide Deployment",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-06 00:00:00.000"
+    },
+    "m7" : {
+      "consumptionType" : "Video",
+      "description" : "This is a description of Announcements module.",
+      "duration" : 25,
+      "id" : "m7",
+      "imgUrl" : "https://picsum.photos/600/400?random=1",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Announcements -INF",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-07 00:00:00.000"
+    },
+    "m8" : {
+      "consumptionType" : "Video",
+      "description" : "This is a description of Announcements module.",
+      "duration" : 40,
+      "id" : "m8",
+      "imgUrl" : "https://picsum.photos/600/400?random=3",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "Announcements -APS",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-08 00:00:00.000"
+    },
+    "m9" : {
+      "consumptionType" : "Video",
+      "description" : "This is a description of New MakeUp Looks module.",
+      "duration" : 25,
+      "id" : "m9",
+      "imgUrl" : "https://picsum.photos/600/400?random=2",
+      "isFavorite" : false,
+      "isLandScape" : true,
+      "isScorable" : false,
+      "maxAttemptLimit" : 999,
+      "maxScore" : 0.0,
+      "name" : "New MakeUp Looks",
+      "passingPercentage" : 0.75,
+      "publishDate" : "2020-01-09 00:00:00.000"
+    }
+  },
+  "users" : {
+    "gGmYx9IZu0dQdBBx6uNpRxjREM42" : {
+      "c1" : {
+        "dateAssigned" : "30/1/2020",
+        "remainingAttempts" : 3,
+        "status" : "NotStarted"
+      },
+      "c2" : {
+        "dateAssigned" : "30/3/2020",
+        "remainingAttempts" : 3,
+        "status" : "Done"
+      },
+      "c3" : {
+        "dateAssigned" : "30/2/2020",
+        "remainingAttempts" : 3,
+        "status" : "Done"
+      },
+      "c4" : {
+        "dateAssigned" : "30/4/2020",
+        "remainingAttempts" : 3,
+        "status" : "NotStarted"
+      },
+      "c5" : {
+        "dateAssigned" : "30/6/2020",
+        "remainingAttempts" : 3,
+        "status" : "NotStarted"
+      },
+      "c6" : {
+        "dateAssigned" : "30/7/2020",
+        "remainingAttempts" : 3,
+        "status" : "NotStarted"
+      },
+      "c7" : {
+        "dateAssigned" : "30/7/2020",
+        "remainingAttempts" : 3,
+        "status" : "NotStarted"
+      }
+    },
+    "u_id2" : {
+      "c1" : {
+        "dateAssigned" : "30/1/2020",
+        "remainingAttempts" : 3,
+        "status" : "Done"
+      },
+      "c2" : {
+        "dateAssigned" : "30/1/2020",
+        "remainingAttempts" : 3,
+        "status" : "Done"
+      },
+      "c3" : {
+        "dateAssigned" : "30/1/2020",
+        "remainingAttempts" : 3,
+        "status" : "Done"
+      }
+    }
+  }
+}
