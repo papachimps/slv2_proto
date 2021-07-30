@@ -25,9 +25,11 @@ class CoursesController extends GetxController {
     super.onInit();
   }
 
+// convert list of course objects to Json string
   String coursesToJson(List<Course> coursesList) =>
       json.encode(courseListToMap(coursesList));
 
+/// fetch courses form network and fill into [courses] variable
   Future fetchCourses() async {
     final jsonResponse = await networkService.getData();
     final _coursesListMap = json.decode(jsonResponse);
@@ -68,7 +70,7 @@ class CoursesController extends GetxController {
 
 // toggle bookMark status of provided course
   bool toggleBookmarkStatus(String courseId) {
-      var _course = courses.firstWhere((course) => course.id == courseId);
+    var _course = courses.firstWhere((course) => course.id == courseId);
     _course.isCourseBookMarked = !_course.isCourseBookMarked;
     return _course.isCourseBookMarked;
   }
@@ -114,6 +116,7 @@ class CoursesController extends GetxController {
     return categoryCountMap;
   }
 
+// convert list of course objects to Map object
   Map courseListToMap(List<Course> courseList) {
     Map _courseMap = new Map();
     for (var _course in courseList) {
@@ -124,6 +127,7 @@ class CoursesController extends GetxController {
     return _courseMap;
   }
 
+// convert Map object to list of course objects
   List<Course> courseListFromMap(Map coursesListMap) {
     final List<Course> _courseList = [];
     coursesListMap.forEach((course, data) {
