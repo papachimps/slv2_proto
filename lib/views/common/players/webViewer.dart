@@ -35,7 +35,10 @@ class WebViewerState extends State<WebViewer> {
     orientation = arguments['orientation'];
     print(orientation);
     SystemChrome.setPreferredOrientations(handleOrientation(orientation));
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.immersive,
+    );
     super.initState();
     // // Enable hybrid composition.
     // if (Platform.isAndroid) WebView.platform = SurfaceAndroidWebView();
@@ -44,16 +47,24 @@ class WebViewerState extends State<WebViewer> {
   @override
   void dispose() {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    SystemChrome.setEnabledSystemUIOverlays([
-      SystemUiOverlay.top,
-      SystemUiOverlay.bottom,
-    ]);
+    // SystemChrome.setEnabledSystemUIOverlays([
+    //   SystemUiOverlay.top,
+    //   SystemUiOverlay.bottom,
+    // ]);
+    SystemChrome.setEnabledSystemUIMode(
+      SystemUiMode.manual,
+      overlays: [
+        SystemUiOverlay.bottom,
+        SystemUiOverlay.top,
+      ],
+    );
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Stack(
         children: [
           InAppWebView(

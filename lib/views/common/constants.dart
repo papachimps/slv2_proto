@@ -165,7 +165,7 @@ const gCategoryIcon = 'assets/images/category.svg';
 const gHomeNavBarIcon = 'assets/images/home.svg';
 const gCourseNavBarIcon = 'assets/images/course.svg';
 const gBookmarkNavBarIcon = 'assets/images/bookmark.svg';
-const gProfileNavBarIcon = 'assets/images/profile.svg';
+const gProfileNavBarIcon = 'assets/images/profile_icon.svg';
 
 final randomColor = RandomColor();
 final faker = new Faker();

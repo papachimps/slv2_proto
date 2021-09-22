@@ -26,7 +26,10 @@ class PdfPlayerState extends State<PdfPlayer> {
   @override
   void initState() {
     super.initState();
-    SystemChrome.setEnabledSystemUIOverlays([]);
+    // SystemChrome.setEnabledSystemUIOverlays([]);
+      SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.immersive,
+  );
     Map<String, dynamic> arguments = Get.arguments;
     moduleId = arguments['moduleId'];
     moduleUrl = arguments['moduleUrl'];
@@ -36,10 +39,17 @@ class PdfPlayerState extends State<PdfPlayer> {
   @override
   void dispose() {
     SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-    SystemChrome.setEnabledSystemUIOverlays([
-      SystemUiOverlay.top,
+      SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: [
       SystemUiOverlay.bottom,
-    ]);
+      SystemUiOverlay.top,
+    ],
+  );
+    // SystemChrome.setEnabledSystemUIOverlays([
+    //   SystemUiOverlay.top,
+    //   SystemUiOverlay.bottom,
+    // ]);
     super.dispose();
   }
 

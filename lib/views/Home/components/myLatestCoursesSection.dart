@@ -12,7 +12,7 @@ import '/views/Course/courseScreen.dart';
 import '../localConstants.dart';
 
 class MyLatestCoursesSection extends StatelessWidget {
-  final _filterController = Get.find<CoursesController>();
+  final _coursesController = Get.find<CoursesController>();
   @override
   Widget build(BuildContext context) {
     print('built MyLatestCoursesSection');
@@ -20,12 +20,12 @@ class MyLatestCoursesSection extends StatelessWidget {
       height: (250 + 16) * gScaleFactor,
       width: double.infinity,
       child: Obx(() {
-        if (_filterController.isLoading.isTrue)
+        if (_coursesController.isLoading.isTrue)
           return Center(
               child: CircularProgressIndicator(
                   color: gThemeOrangeColor, strokeWidth: 1));
         else {
-          var recentFiveCourses = _filterController.courses;
+          var recentFiveCourses = _coursesController.courses;
           return ListView.builder(
               physics: BouncingScrollPhysics(),
               scrollDirection: Axis.horizontal,
