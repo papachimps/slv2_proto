@@ -22,10 +22,18 @@ import '/views/Profile/editProfileScreen/editProfileScreen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
-  SystemChrome.setEnabledSystemUIOverlays([
-    SystemUiOverlay.bottom,
-    SystemUiOverlay.top,
-  ]);
+  SystemChrome.setEnabledSystemUIMode(
+    SystemUiMode.manual,
+    overlays: [
+      SystemUiOverlay.bottom,
+      SystemUiOverlay.top,
+    ],
+  );
+  // SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+  // SystemChrome.setEnabledSystemUIOverlays([
+  //   SystemUiOverlay.bottom,
+  //   SystemUiOverlay.top,
+  // ]);
   // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
   //   systemNavigationBarColor: gPrimaryWhiteBG,
   //   systemNavigationBarDividerColor: gPrimaryWhiteBG,
@@ -37,12 +45,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Spicelearn V2_proto',
+      title: 'Spicelearn V2',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.cupertino,
       theme: ThemeData(
         primaryColor: gThemeOrangeColor,
-        accentColor: gThemeOrangeColor,
+        // accentColor: gThemeOrangeColor,      //deprecated
         scaffoldBackgroundColor: gPrimaryWhiteBG,
         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         // pageTransitionsTheme: PageTransitionsTheme(

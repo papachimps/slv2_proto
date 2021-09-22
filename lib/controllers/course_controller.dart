@@ -1,11 +1,11 @@
 import 'dart:convert';
 import 'package:get/state_manager.dart';
 
-import '/services/networkservice.dart';
+import '../interface/courses_interface.dart';
 import '/models/course.dart';
 
 class CoursesController extends GetxController {
-  final networkService = NetworkService();
+  final coursesInterface = CoursesInterface();
   final courses = <Course>[].obs;
   final isLoading = true.obs;
   final RxString activeCategoryFilter = 'All'.obs;
@@ -29,7 +29,7 @@ class CoursesController extends GetxController {
       json.encode(courseListToMap(coursesList));
 
   Future fetchCourses() async {
-    final jsonResponse = await networkService.getData();
+    final jsonResponse = await coursesInterface.getData(CoursesInterface.coursesUrl);
     final _coursesListMap = json.decode(jsonResponse);
     courses.addAll(courseListFromMap(_coursesListMap));
     coursesSortedByRecent();
